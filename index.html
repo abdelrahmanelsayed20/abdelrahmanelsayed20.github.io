@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdelrahman Elsayed | Data Science & AI Student</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #00d4ff;
+            --secondary-color: #0066cc;
+            --accent-color: #ff6b6b;
+            --dark-bg: #0a0a0a;
+            --darker-bg: #000000;
+            --light-text: #ffffff;
+            --gray-text: #a0a0a0;
+            --card-bg: #1a1a1a;
+            --gradient: linear-gradient(135deg, #00d4ff, #0066cc);
+            --hover-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--darker-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: var(--hover-transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--hover-transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(ellipse at center, #001122 0%, #000000 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="grain"><stop offset="0%" style="stop-color:%2300d4ff;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%230066cc;stop-opacity:0.05"/></radialGradient></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            animation: grain 8s steps(10) infinite;
+        }
+
+        @keyframes grain {
+            0%, 100% { transform: translate(0, 0) }
+            10% { transform: translate(-5%, -10%) }
+            20% { transform: translate(-15%, 5%) }
+            30% { transform: translate(7%, -25%) }
+            40% { transform: translate(-5%, 25%) }
+            50% { transform: translate(-15%, 10%) }
+            60% { transform: translate(15%, 0%) }
+            70% { transform: translate(0%, 15%) }
+            80% { transform: translate(3%, 35%) }
+            90% { transform: translate(-10%, 10%) }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            color: var(--gray-text);
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            font-style: italic;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--hover-transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--light-text);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 6rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray-text);
+        }
+
+        .about-text h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: var(--hover-transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: var(--hover-transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
+        }
+
+        .skill-level {
+            background: var(--primary-color);
+            color: var(--darker-bg);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: var(--hover-transition);
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 25px 50px rgba(0, 212, 255, 0.2);
+        }
+
+        .project-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 102, 204, 0.1));
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .project-description {
+            color: var(--gray-text);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--hover-transition);
+        }
+
+        .project-link:hover {
+            color: var(--light-text);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            space-y: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--card-bg);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: var(--hover-transition);
+        }
+
+        .contact-item:hover {
+            border-color: var(--primary-color);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            width: 40px;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 50%;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--hover-transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            color: var(--darker-bg);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--darker-bg);
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 4rem 1rem;
+            }
+        }
+
+        /* Scroll Animations */
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-animation.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Abdelrahman Elsayed</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Abdelrahman Elsayed Hassan</h1>
+            <p class="subtitle">Data Science & AI Student</p>
+            <p class="tagline">"Big problems, smart solutions—scaling ideas beyond limits"</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title scroll-animation">About Me</h2>
+        <div class="about-content scroll-animation">
+            <div class="about-text">
+                <h3>Junior Data Science & AI Student</h3>
+                <p>I'm currently in my third year at Zewail City University of Science and Technology, pursuing a Bachelor's degree in Data Science and Artificial Intelligence. With a strong foundation in machine learning, statistical analysis, and full-stack development, I'm passionate about building innovative solutions that solve real-world problems.</p>
+                
+                <p>My experience spans from developing intelligent recommendation systems to creating comprehensive fraud detection models. I thrive in collaborative environments and enjoy the challenge of turning complex data into actionable insights.</p>
+                
+                <h3>🎓 Education</h3>
+                <p><strong>Zewail City University of Science and Technology</strong><br>
+                Bachelor of Science in Data Science and Artificial Intelligence<br>
+                Expected Graduation: 2026 | Current Year: Junior (3rd Year)</p>
+            </div>
+            
+            <div class="about-stats">
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div>Projects Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div>Programming Languages</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">90%+</div>
+                    <div>ML Model Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2026</div>
+                    <div>Expected Graduation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2 class="section-title scroll-animation">Technical Skills</h2>
+        <div class="skills-container scroll-animation">
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                <div class="skill-item">
+                    <span>Python</span>
+                    <span class="skill-level">Experienced</span>
+                </div>
+                <div class="skill-item">
+                    <span>C++</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-item">
+                    <span>JavaScript</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-item">
+                    <span>SQL</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-item">
+                    <span>R</span>
+                    <span class="skill-level">Basic</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-robot"></i> Machine Learning & AI</h3>
+                <div class="skill-item">
+                    <span>Scikit-learn</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-item">
+                    <span>TensorFlow/Keras</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-item">
+                    <span>PyTorch</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-item">
+                    <span>Pandas/NumPy</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-globe"></i> Web Development</h3>
+                <div class="skill-item">
+                    <span>Django</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-item">
+                    <span>Flask</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-item">
+                    <span>React</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-item">
+                    <span>HTML/CSS</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+                <div class="skill-item">
+                    <span>Git/GitHub</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-item">
+                    <span>Jupyter Notebook</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-item">
+                    <span>Docker</span>
+                    <span class="skill-level">Basic</span>
+                </div>
+                <div class="skill-item">
+                    <span>MySQL/PostgreSQL</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2 class="section-title scroll-animation">Featured Projects</h2>
+        <div class="projects-grid scroll-animation">
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">🛒 Smart Market Platform</h3>
+                    <p class="project-description">
+                        An intelligent e-commerce platform featuring AI-powered product recommendations, user browsing optimization, and secure purchasing capabilities. Built with advanced machine learning algorithms for personalized user experiences.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">SQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/abdelrahmanelsayed20/Smart-market" class="project-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">🔍 Advanced Fraud Detection</h3>
+                    <p class="project-description">
+                        Comprehensive machine learning system for fraud detection and risk scoring achieving 90%+ accuracy. Implements ensemble methods and advanced data preprocessing techniques for reliable fraud identification.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">XGBoost</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">SMOTE</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/abdelrahmanelsayed20/risk_score_reg_fraud_class" class="project-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">🌐 NutriQuest Search Engine</h3>
+                    <p class="project-description">
+                        AI-powered search engine specializing in nutrition and fitness content with advanced NLP techniques, query expansion, and real-time performance analytics. Features intelligent query processing and relevance scoring.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">PyTerrier</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">Information Retrieval</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/abdelrahmanelsayed20/NurtriQuest" class="project-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">🧠 Trie Data Structure</h3>
+                    <p class="project-description">
+                        Efficient C++ implementation of Trie data structure supporting advanced string operations including word insertion, search, prefix/suffix matching, and deletion with optimized performance analysis.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Data Structures</span>
+                        <span class="tech-tag">Algorithms</span>
+                        <span class="tech-tag">Performance Optimization</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/abdelrahmanelsayed20/Trie-implementation-" class="project-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">🎮 Maze Solving Algorithm</h3>
+                    <p class="project-description">
+                        Intelligent pathfinding system implementing multiple search algorithms (DFS, BFS, A*) with interactive visualization showing algorithm progression and optimal path discovery with performance comparisons.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Algorithm Design</span>
+                        <span class="tech-tag">Graph Theory</span>
+                        <span class="tech-tag">Visualization</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/abdelrahmanelsayed20/Maze-Solving-Algorithm" class="project-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">💼 Personal Portfolio</h3>
+                    <p class="project-description">
+                        Modern, responsive portfolio website showcasing projects and technical skills with smooth animations, interactive elements, and mobile-first design. Optimized for performance and accessibility.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Responsive Design</span>
+                        <span class="tech-tag">Netlify</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://abdelrahmanelsayedportfolio.netlify.app/" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/abdelrahmanelsayed20/personal-portfolio" class="project-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2 class="section-title scroll-animation">Let's Connect</h2>
+        <div class="contact-container scroll-animation">
+            <div class="contact-info">
+                <h3 style="color: var(--primary-color); margin-bottom: 2rem;">Get In Touch</h3>
+                <p style="color: var(--gray-text); margin-bottom: 3rem; line-height: 1.8;">
+                    I'm always open to discussing innovative projects, research opportunities, and collaborations in Data Science and AI. Whether you're looking for a talented junior developer or want to explore the possibilities of machine learning solutions, I'd love to hear from you!
+                </p>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Email</h4>
+                        <a href="mailto:s-abdulrahman.hassan@zewailcity.edu.eg" style="color: var(--gray-text); text-decoration: none;">
+                            s-abdulrahman.hassan@zewailcity.edu.eg
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">University</h4>
+                        <p style="color: var(--gray-text); margin: 0;">Zewail City University of Science and Technology</p>
+                        <p style="color: var(--gray-text); margin: 0; font-size: 0.9rem;">Data Science and AI | Junior Year</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Location</h4>
+                        <p style="color: var(--gray-text); margin: 0;">Egypt</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/abdelrahman-elsayed-887232262/" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/abdelrahmanelsayed20" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://abdelrahmanelsayedportfolio.netlify.app/" class="social-link" target="_blank">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                    <a href="mailto:s-abdulrahman.hassan@zewailcity.edu.eg" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <div style="background: var(--card-bg); padding: 2rem; border-radius: 15px; border: 1px solid rgba(0, 212, 255, 0.1);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 2rem; text-align: center;">Send Me a Message</h3>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div style="margin-bottom: 1.5rem;">
+                            <input type="text" name="name" placeholder="Your Name" required 
+                                   style="width: 100%; padding: 1rem; background: var(--darker-bg); border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 8px; color: var(--light-text); font-size: 1rem;">
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <input type="email" name="email" placeholder="Your Email" required
+                                   style="width: 100%; padding: 1rem; background: var(--darker-bg); border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 8px; color: var(--light-text); font-size: 1rem;">
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <input type="text" name="subject" placeholder="Subject" required
+                                   style="width: 100%; padding: 1rem; background: var(--darker-bg); border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 8px; color: var(--light-text); font-size: 1rem;">
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <textarea name="message" placeholder="Your Message" rows="5" required
+                                      style="width: 100%; padding: 1rem; background: var(--darker-bg); border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 8px; color: var(--light-text); font-size: 1rem; resize: vertical;"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <p style="color: var(--gray-text);">
+                        © 2024 Abdelrahman Elsayed Hassan. All rights reserved.
+                    </p>
+                </div>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#home" style="color: var(--gray-text); text-decoration: none; transition: var(--hover-transition);" 
+                       onmouseover="this.style.color='var(--primary-color)'" 
+                       onmouseout="this.style.color='var(--gray-text)'">Home</a>
+                    <a href="#about" style="color: var(--gray-text); text-decoration: none; transition: var(--hover-transition);"
+                       onmouseover="this.style.color='var(--primary-color)'" 
+                       onmouseout="this.style.color='var(--gray-text)'">About</a>
+                    <a href="#projects" style="color: var(--gray-text); text-decoration: none; transition: var(--hover-transition);"
+                       onmouseover="this.style.color='var(--primary-color)'" 
+                       onmouseout="this.style.color='var(--gray-text)'">Projects</a>
+                </div>
+            </div>
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(0, 212, 255, 0.1); text-center;">
+                <p style="color: var(--primary-color); font-style: italic;">
+                    "Big problems, smart solutions—scaling ideas beyond limits"
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(0, 0, 0, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-animation').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Create mailto link
+            const mailtoLink = `mailto:s-abdulrahman.hassan@zewailcity.edu.eg?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            const button = this.querySelector('button');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+            button.style.background = '#28a745';
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.style.background = '';
+                this.reset();
+            }, 3000);
+        });
+
+        // Add hover effects to project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-10px) scale(1)';
+            });
+        });
+
+        // Add typing effect to hero section
+        const heroTitle = document.querySelector('.hero h1');
+        if (heroTitle) {
+            const text = heroTitle.textContent;
+            heroTitle.textContent = '';
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < text.length) {
+                    heroTitle.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            };
+            
+            setTimeout(typeWriter, 1000);
+        }
+
+        // Add floating animation to stat cards
+        document.querySelectorAll('.stat-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.2}s`;
+            card.style.animation = 'float 6s ease-in-out infinite';
+        });
+
+        // Input focus effects
+        document.querySelectorAll('input, textarea').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.borderColor = 'var(--primary-color)';
+                this.style.boxShadow = '0 0 0 2px rgba(0, 212, 255, 0.2)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.style.borderColor = 'rgba(0, 212, 255, 0.3)';
+                this.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
