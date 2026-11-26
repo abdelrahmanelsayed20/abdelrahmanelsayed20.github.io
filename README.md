@@ -65,6 +65,6 @@ Every push to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/dep
 
 ## Credits
 
-- Design inspiration: [Fahd Seddik](https://github.com/FahdSeddik). The voxel name and terminal GIFs follow the style of the ones on his GitHub profile, redrawn with my name; `wave.gif` is from the same profile.
+ The voxel name and terminal GIFs follow the style of the ones on his GitHub profile, redrawn with my name; `wave.gif` is from the same profile.
 - Signature font: [Ms Madi](https://fonts.google.com/specimen/Ms+Madi), SIL Open Font License (`assets/fonts/OFL-MsMadi.txt`).
 - Tech icons: [Devicon](https://devicon.dev/) (MIT). 3D cube: [three.js](https://threejs.org/).
