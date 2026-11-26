@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Abdelrahman Elsayed · Machine Learning &amp; Data Science</title>
+  <meta name="description" content="Abdelrahman Elsayed: Data Science &amp; AI at Zewail City University. Machine learning, explainable AI, model compression and information retrieval. Open to ML and Data Science internships.">
+  <meta name="author" content="Abdelrahman Elsayed Hassan">
+  <meta name="theme-color" content="#09090b">
+  <meta name="color-scheme" content="dark light">
+  <link rel="canonical" href="https://abdelrahmanelsayed20.github.io/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Abdelrahman Elsayed">
+  <meta property="og:url" content="https://abdelrahmanelsayed20.github.io/">
+  <meta property="og:title" content="Abdelrahman Elsayed · Machine Learning &amp; Data Science">
+  <meta property="og:description" content="I train models that learn, then make them leaner, faster and explainable. Open to ML and Data Science internships.">
+  <meta property="og:image" content="https://abdelrahmanelsayed20.github.io/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Abdelrahman Elsayed, Machine Learning and Data Science, with a 3D loss landscape">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Abdelrahman Elsayed · Machine Learning &amp; Data Science">
+  <meta name="twitter:description" content="I train models that learn, then make them leaner, faster and explainable.">
+  <meta name="twitter:image" content="https://abdelrahmanelsayed20.github.io/assets/img/og-image.png">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <script>
+    /* Theme before first paint + progressive-enhancement flag (with a failsafe). */
+    (function () {
+      var d = document.documentElement, t = null;
+      d.classList.add('js');
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      d.setAttribute('data-theme', t);
+      setTimeout(function () { if (!window.__siteReady) d.classList.remove('js'); }, 4000);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Abdelrahman Elsayed Hassan",
+    "alternateName": "Abdelrahman Elsayed",
+    "url": "https://abdelrahmanelsayed20.github.io/",
+    "image": "https://abdelrahmanelsayed20.github.io/assets/img/og-image.png",
+    "jobTitle": "Machine Learning & Data Science",
+    "email": "mailto:s-abdulrahman.hassan@zewailcity.edu.eg",
+    "address": { "@type": "PostalAddress", "addressLocality": "Giza", "addressCountry": "EG" },
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "Zewail City University of Science and Technology" },
+    "knowsAbout": ["Machine Learning", "Deep Learning", "Explainable AI", "Model Quantization", "Information Retrieval", "Natural Language Processing", "AWS", "MLOps"],
+    "sameAs": ["https://github.com/abdelrahmanelsayed20", "https://www.linkedin.com/in/abdelrahman-elsayed-887232262/"]
+  }
+  </script>
+</head>
+<body>
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-arrow-ne" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+      <symbol id="i-github" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8.5h16M4 15.5h16"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.3-4.9L4 8M4 4v4h4M4 13a8 8 0 0 0 14.3 4.9L20 16M20 20v-4h-4"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5v-15M9 7.5h7"/></symbol>
+      <symbol id="i-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 4A2.5 2.5 0 0 0 7 6.5v.2A3 3 0 0 0 4.5 10a3 3 0 0 0 1 2.2A3 3 0 0 0 7 18a2.5 2.5 0 0 0 2.5 2.5V4zM14.5 4A2.5 2.5 0 0 1 17 6.5v.2a3 3 0 0 1 2.5 3.3 3 3 0 0 1-1 2.2A3 3 0 0 1 17 18a2.5 2.5 0 0 1-2.5 2.5V4z"/></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="m7.5 14.5 3.5-3.5 3 3 5-6"/></symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18.5a4.5 4.5 0 0 1-.6-9A6 6 0 0 1 18 9a4.75 4.75 0 0 1-.5 9.5z"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></symbol>
+      <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.8 7 21l5-2.6 5 2.6-1.5-7.2"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="bg" aria-hidden="true"><div class="bg-dots"></div><div class="bg-glow"></div></div>
+
+  <!-- ================================================================ NAV -->
+  <header>
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Abdelrahman Elsayed, back to top">AE</a>
+      <div class="nav-links">
+        <span class="nav-indicator" aria-hidden="true"></span>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <div class="nav-right">
+        <button class="icon-btn kbd-btn" type="button" data-palette aria-label="Open command palette" title="Command palette"><span class="kbd" data-kbd-mod>Ctrl K</span></button>
+        <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme" title="Toggle theme">
+          <svg class="moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        </button>
+        <a class="nav-cta" href="assets/Abdelrahman-Elsayed-CV.pdf" target="_blank" rel="noopener">CV <svg aria-hidden="true"><use href="#i-arrow-ne"/></svg></a>
+        <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg class="ic-open" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="ic-close" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+      <span class="nav-progress" aria-hidden="true"></span>
+    </nav>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" inert>
+    <a href="#about" style="--i:0">About <span>01</span></a>
+    <a href="#experience" style="--i:1">Experience <span>02</span></a>
+    <a href="#research" style="--i:2">Research <span>03</span></a>
+    <a href="#projects" style="--i:3">Projects <span>04</span></a>
+    <a href="#skills" style="--i:4">Skills <span>05</span></a>
+    <a href="#contact" style="--i:5">Contact <span>06</span></a>
+    <div class="mobile-cta">
+      <a class="btn btn-primary btn-sm" href="assets/Abdelrahman-Elsayed-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      <button class="btn btn-ghost btn-sm" type="button" data-copy-email>Copy email</button>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- ============================================================ HERO -->
+    <section class="hero" id="top" aria-label="Introduction">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="hero-overline hero-fade" style="--d:0">
+              <span class="chip-status"><span class="pulse" aria-hidden="true"></span><b>Open to internships</b> · ML &amp; Data Science</span>
+            </div>
+
+            <h1 class="hero-name" aria-label="Abdelrahman Elsayed">
+              <span class="line line-1" aria-hidden="true" data-split>Abdelrahman</span>
+              <span class="line line-2" aria-hidden="true" data-split>Elsayed<span class="dot">.</span></span>
+            </h1>
+
+            <p class="hero-lead hero-fade" style="--d:1">I train models that <em>learn</em>, then make them leaner, faster and <em>explainable</em>.</p>
+
+            <p class="hero-sub hero-fade" style="--d:2">
+              Data Science &amp; AI at Zewail City University. I completed the AWS Machine Learning Engineer
+              track at DEPI, was part of the four-person team behind NeuroQuant (a model-compression framework
+              on PyPI), and have taught Python &amp; AI to 100+ students.
+            </p>
+
+            <div class="hero-actions hero-fade" style="--d:3">
+              <a class="btn btn-primary" href="#projects" data-magnetic>See my work <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <a class="btn btn-ghost" href="assets/Abdelrahman-Elsayed-CV.pdf" target="_blank" rel="noopener"><svg class="dl" aria-hidden="true"><use href="#i-download"/></svg> Download CV</a>
+            </div>
+
+            <div class="hero-links hero-fade" style="--d:4">
+              <a href="https://github.com/abdelrahmanelsayed20" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg> GitHub</a>
+              <a href="https://www.linkedin.com/in/abdelrahman-elsayed-887232262/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</a>
+              <a href="mailto:s-abdulrahman.hassan@zewailcity.edu.eg"><svg aria-hidden="true"><use href="#i-mail"/></svg> Email</a>
+              <span class="hero-loc mono">Giza, Egypt</span>
+            </div>
+          </div>
+
+          <!-- fig. 01: the optimizer lab -->
+          <figure class="lab hero-fade" style="--d:2" aria-labelledby="lab-title">
+            <div class="lab-head">
+              <span class="lab-live" aria-hidden="true"></span>
+              <span class="lab-fig">fig. 01</span>
+              <span class="lab-title" id="lab-title">Four optimizers racing down a loss landscape</span>
+              <span class="lab-step" id="lab-step" aria-hidden="true">step 0000</span>
+            </div>
+            <div class="lab-stage">
+              <canvas id="lab-canvas" tabindex="0" role="img" aria-label="Interactive 3D loss landscape. Adam, SGD with momentum, RMSProp and AdaGrad race to the minimum. Drag to rotate, click the surface to choose a new starting point, or press Enter for a new race."></canvas>
+              <div class="lab-tip" id="lab-tip" hidden></div>
+              <span class="lab-hint" aria-hidden="true">drag to orbit · click to drop a start point</span>
+            </div>
+            <p class="lab-note" id="lab-note">Loading the landscape…</p>
+            <ul class="lab-legend" id="lab-legend" aria-label="Optimizer status"></ul>
+            <div class="lab-foot">
+              <div class="seg" role="group" aria-label="Loss landscape">
+                <button type="button" aria-pressed="true" data-land="0">Twin valleys</button>
+                <button type="button" aria-pressed="false" data-land="1">Himmelblau</button>
+                <button type="button" aria-pressed="false" data-land="2">Rosenbrock</button>
+              </div>
+              <button type="button" class="lab-restart" id="lab-restart"><svg aria-hidden="true"><use href="#i-refresh"/></svg> New race</button>
+            </div>
+            <figcaption class="lab-caption">The real update rules run live in your browser. Inspired by my comparative study of optimizers (<a class="accent" href="#research-optimizers">§3</a>).</figcaption>
+          </figure>
+        </div>
+
+        <!-- proof strip -->
+        <div class="proof reveal" aria-label="Highlights">
+          <div class="proof-item">
+            <span class="proof-num"><span data-count="7">7</span></span>
+            <span class="proof-label">quantization methods in NeuroQuant, our graduation project published on PyPI</span>
+            <span class="proof-src">NeuroQuant · team of 4</span>
+          </div>
+          <div class="proof-item">
+            <span class="proof-num"><span data-count="938">938</span><span class="unit">K</span></span>
+            <span class="proof-label">IoT network flows classified into 6 traffic classes, at 0.84 macro-F1</span>
+            <span class="proof-src">Intrusion detection · XGBoost</span>
+          </div>
+          <div class="proof-item">
+            <span class="proof-num"><span data-count="97.25" data-decimals="2">97.25</span><span class="unit">%</span></span>
+            <span class="proof-label">test accuracy of a BiLSTM sentiment model on 62,509 held-out reviews</span>
+            <span class="proof-src">Sentiment analyzer · team</span>
+          </div>
+          <div class="proof-item">
+            <span class="proof-num"><span data-count="100">100</span><span class="unit">+</span></span>
+            <span class="proof-label">students aged 10–15 taught Python, AI and game development</span>
+            <span class="proof-src">iSchool · since 2024</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================== ABOUT -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-index eyebrow"><span class="num">§1</span> About</div>
+          <h2 class="section-title" id="about-title">Curious about <em>why</em> models work, not only whether they do.</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="prose">
+            <p class="lede reveal">I'm Abdelrahman, from Zewail City University's Data Science &amp; AI program, and I love the whole arc of a machine-learning problem: from messy data, to a model that works, to a model you can <em>trust</em>.</p>
+            <p class="reveal">Most of my work sits where research meets engineering. My graduation project, <strong>NeuroQuant</strong>, is a model-compression framework our four-person team published on PyPI: an evolutionary search (NSGA-II) picks INT4 or INT8 precision for every layer, trading accuracy against real file size and latency. In a team study on <strong>EEG emotion recognition</strong> I built an attention-based CNN-BiLSTM, evaluated it on people it had never seen, and used saliency maps and SHAP to check <em>what</em> the models actually learned.</p>
+            <p class="reveal">Through Egypt's <strong>DEPI</strong> program I completed the AWS Machine Learning Engineer track (cloud ML pipelines, MLflow, Hugging Face). I enjoy shipping things end to end: Streamlit apps backed by deep-learning models and local LLMs, BM25 search engines with a RAG chatbot on top, and Flask web apps in Docker.</p>
+            <p class="reveal">I also teach. Explaining Python and AI to 100+ kids aged 10–15 at iSchool taught me to make complex ideas simple, which turns out to be just as useful in a code review or a research meeting.</p>
+            <p class="reveal">Right now I'm looking for an <strong>ML or Data Science internship</strong> where I can learn from strong engineers and ship models that matter.</p>
+
+            <ul class="now reveal" aria-label="Recent focus">
+              <li><span>Graduation</span><span>NeuroQuant: mixed-precision quantization, published on PyPI</span></li>
+              <li><span>Research</span><span>Explainable EEG emotion recognition · swarm optimization for battery health</span></li>
+              <li><span>Teaching</span><span>Python and AI fundamentals at iSchool</span></li>
+              <li><span>Looking for</span><span><b>ML / Data Science internships</b>, remote or on-site</span></li>
+            </ul>
+          </div>
+
+          <aside class="model-card reveal" style="--d:2" aria-label="Model card: a quick summary">
+            <div class="model-card-cover">
+              <canvas id="cover-canvas" aria-hidden="true"></canvas>
+              <!-- Want a photo here? Save it as assets/img/portrait.jpg and uncomment the next line.
+              <img src="assets/img/portrait.jpg" alt="Portrait of Abdelrahman Elsayed" width="800" height="500"> -->
+              <span class="cover-tag">model card</span>
+              <span class="monogram" aria-hidden="true">A<i>E</i></span>
+            </div>
+            <div class="model-card-body">
+              <div class="model-card-title"><h3>abdelrahman-elsayed</h3><span>v2026</span></div>
+              <dl class="spec">
+                <dt>Architecture</dt><dd>B.Sc. Data Science &amp; AI, <b>Zewail City University</b></dd>
+                <dt>Trained on</dt><dd>Coursework, the DEPI AWS ML Engineer track, research in XAI and optimization, and 8 public projects</dd>
+                <dt>Strengths</dt><dd>PyTorch · explainable AI · model compression · information retrieval · end-to-end ML apps</dd>
+                <dt>Intended use</dt><dd><b>ML / Data Science internships</b>, research engineering</dd>
+                <dt>Deployed in</dt><dd>Giza, Egypt · remote-friendly</dd>
+                <dt>Known quirk</dt><dd>Can explain backpropagation to a 12-year-old.</dd>
+              </dl>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================== EXPERIENCE -->
+    <section class="section" id="experience" aria-labelledby="exp-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-index eyebrow"><span class="num">§2</span> Experience</div>
+          <div>
+            <h2 class="section-title" id="exp-title">Cloud ML training, <em>and</em> years at the whiteboard.</h2>
+            <p class="section-sub">Hands-on AWS machine-learning engineering on one side, and teaching on the other, which keeps my explanations honest.</p>
+          </div>
+        </div>
+
+        <div class="gantt reveal" role="figure" aria-label="Timeline from 2022 to today: B.Sc. at Zewail City from September 2022 to June 2026, coding instructor at iSchool since June 2024, AWS ML Engineer trainee at DEPI from November 2024 to May 2025, and part-time coding instructor at Bareeq Academy from June to August 2025.">
+          <div class="gantt-head">
+            <span class="eyebrow">fig. 02 · timeline, 2022 to today</span>
+          </div>
+          <div class="gantt-track">
+            <div class="gantt-axis" aria-hidden="true">
+              <span style="--y:2023">2023</span><span style="--y:2024">2024</span><span style="--y:2025">2025</span><span style="--y:2026">2026</span>
+            </div>
+            <div class="gantt-rows">
+              <div class="gantt-row">
+                <div class="gantt-label"><b>Zewail City University</b>B.Sc. Data Science &amp; AI</div>
+                <div class="gantt-lane"><span class="gantt-bar" style="--from:2022.667;--to:2026.5;--bar:var(--text-2);--i:0"></span></div>
+              </div>
+              <div class="gantt-row">
+                <div class="gantt-label"><b>iSchool</b>Coding Instructor</div>
+                <div class="gantt-lane"><span class="gantt-bar ongoing" data-ongoing style="--from:2024.417;--to:2026.9;--bar:var(--c-sgdm);--i:1"></span></div>
+              </div>
+              <div class="gantt-row">
+                <div class="gantt-label"><b>DEPI</b>AWS ML Engineer Trainee</div>
+                <div class="gantt-lane"><span class="gantt-bar" style="--from:2024.833;--to:2025.417;--bar:var(--accent);--i:2"></span></div>
+              </div>
+              <div class="gantt-row">
+                <div class="gantt-label"><b>Bareeq Academy</b>Part-time Instructor</div>
+                <div class="gantt-lane"><span class="gantt-bar" style="--from:2025.417;--to:2025.667;--bar:var(--c-rmsprop);--i:3"></span></div>
+              </div>
+            </div>
+            <div class="gantt-today" aria-hidden="true"><span>today</span></div>
+          </div>
+        </div>
+
+        <div class="roles">
+          <article class="role featured reveal">
+            <div class="role-when">
+              <span class="logo-chip" aria-hidden="true">DE</span>
+              <span class="dates">Nov 2024 – May 2025</span>
+              <span class="where">Remote</span>
+            </div>
+            <div>
+              <h3>AWS Machine Learning Engineer Trainee <span class="org">· DEPI</span></h3>
+              <p class="role-kicker">Digital Egypt Pioneers Initiative, a national tech-talent training program.</p>
+              <ul>
+                <li>Completed the AWS Machine Learning Engineer track: cloud-based ML solutions, data-engineering pipelines and MLOps practices.</li>
+                <li>Managed the model lifecycle with <b>MLflow</b> and <b>Hugging Face</b>.</li>
+                <li>Applied prompt-engineering techniques to optimize model behaviour, working with cross-functional teammates.</li>
+                <li>Delivered a capstone project: an end-to-end ML pipeline on AWS infrastructure.</li>
+              </ul>
+              <div class="tags"><span class="tag hot">AWS</span><span class="tag">MLflow</span><span class="tag">Hugging Face</span><span class="tag">MLOps</span><span class="tag">Prompt engineering</span></div>
+            </div>
+          </article>
+
+          <article class="role reveal">
+            <div class="role-when">
+              <span class="logo-chip" aria-hidden="true">iS</span>
+              <span class="dates">Jun 2024 – Present</span>
+              <span class="where">Cairo, Egypt</span>
+            </div>
+            <div>
+              <h3>Coding Instructor <span class="org">· iSchool</span></h3>
+              <p class="role-kicker">Programming and artificial-intelligence fundamentals for learners aged 10–15.</p>
+              <ul>
+                <li>Taught programming fundamentals and AI to <b>100+ young learners</b>.</li>
+                <li>Designed a curriculum covering Python programming and game development with the Godot engine.</li>
+                <li>Built engaging materials that grow critical thinking and problem solving, and simplified complex technical ideas for young students.</li>
+              </ul>
+              <div class="waffle-wrap">
+                <div class="waffle" data-waffle="100" role="img" aria-label="A grid of 100 squares, one for each student taught"></div>
+                <p class="waffle-cap"><b>100+</b> students, one square each</p>
+              </div>
+              <div class="tags"><span class="tag">Python</span><span class="tag">Godot</span><span class="tag">Curriculum design</span><span class="tag">Communication</span></div>
+            </div>
+          </article>
+
+          <article class="role reveal">
+            <div class="role-when">
+              <span class="logo-chip" aria-hidden="true">BA</span>
+              <span class="dates">Jun 2025 – Aug 2025</span>
+              <span class="where">Cairo, Egypt</span>
+            </div>
+            <div>
+              <h3>Part-time Coding Instructor <span class="org">· Bareeq Academy</span></h3>
+              <p class="role-kicker">Python from zero for beginner students.</p>
+              <ul>
+                <li>Taught structured lessons on variables, control flow, functions and object-oriented concepts.</li>
+                <li>Designed hands-on exercises and mini-projects that built students' confidence writing and debugging their own code.</li>
+                <li>Connected Python to real data-science and AI applications to inspire students beyond the classroom.</li>
+              </ul>
+              <div class="tags"><span class="tag">Python</span><span class="tag">OOP</span><span class="tag">Teaching</span></div>
+            </div>
+          </article>
+
+          <article class="role reveal">
+            <div class="role-when">
+              <span class="logo-chip" aria-hidden="true">ZC</span>
+              <span class="dates">Sep 2022 – Jun 2026</span>
+              <span class="where">Giza, Egypt</span>
+            </div>
+            <div>
+              <h3>B.Sc. Data Science &amp; Artificial Intelligence <span class="org">· Zewail City University of Science and Technology</span></h3>
+              <p class="role-kicker">Graduation project: <b>NeuroQuant</b>, a mixed-precision quantization framework published on PyPI, supervised by Dr. Mohamed Ghalwash and Prof. Ahmed Abdelsamea.</p>
+              <ul>
+                <li>Research in explainable AI for EEG and in nature-inspired computation (DSAI 403).</li>
+                <li>Course projects in information retrieval, machine learning, AI search and data structures.</li>
+              </ul>
+              <div class="tags"><span class="tag">Machine learning</span><span class="tag">Deep learning</span><span class="tag">Information retrieval</span><span class="tag">Optimization</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== RESEARCH -->
+    <section class="section" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-index eyebrow"><span class="num">§3</span> Research</div>
+          <div>
+            <h2 class="section-title" id="research-title">Asking models to <em>explain</em> themselves.</h2>
+            <p class="section-sub">Explainable AI for brain signals, swarm intelligence for battery health, and a hands-on study of how optimizers really behave.</p>
+          </div>
+        </div>
+
+        <div class="papers">
+          <article class="paper reveal" id="research-eeg">
+            <div class="paper-body">
+              <div class="paper-meta">
+                <span class="status">Team study · 4 contributors</span>
+                <span class="tag">DEAP</span><span class="tag">Leave-one-subject-out</span><span class="tag">XAI</span>
+              </div>
+              <h3>Subject-independent EEG emotion recognition with explainable AI</h3>
+              <p>Emotion classifiers trained on EEG often fail on people they have never seen. Our team benchmarked deep models for valence classification on the DEAP dataset while holding out whole subjects, and paired every model with explainability diagnostics to see which channels and time windows drive its predictions.</p>
+              <p class="contrib"><b>My part:</b> I built and evaluated a CNN-BiLSTM with multi-head self-attention (1.18M parameters) under leave-one-subject-out validation with a fresh model per fold, analysed it with gradient saliency, and replicated a published XAI CNN-RNN explained with SHAP.</p>
+              <div class="paper-stats">
+                <div><strong>31</strong><span>subjects, held out one at a time</span></div>
+                <div><strong>1,240</strong><span>EEG trials · 32 channels</span></div>
+                <div><strong>1.18M</strong><span>parameters in my model</span></div>
+              </div>
+              <div class="paper-links">
+                <button class="link-arrow" type="button" data-case="eeg">Read the case study <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+                <a class="link-arrow" href="https://github.com/abdelrahmanelsayed20/DEAP-Emotion-XAI" target="_blank" rel="noopener">Code <svg aria-hidden="true"><use href="#i-arrow-ne"/></svg></a>
+              </div>
+            </div>
+            <div class="paper-visual">
+              <figure>
+                <div class="art"><svg class="art" data-art="eeg" viewBox="0 0 400 236" role="img" aria-label="Six EEG channels with a time window of high model attribution highlighted, and a saliency strip below" preserveAspectRatio="xMidYMid meet"><rect x="214" y="10" width="86" height="174" rx="8" class="soft-f"/><text x="10" y="29" class="lbl">Fp1</text><polyline points="46,27.8 48,30.6 50,31.9 52,31.9 54,30.4 56,30.5 58,30.8 60,29.4 62,27.7 64,26.5 66,23.5 68,21.8 70,23.2 72,25.3 74,27.8 76,28.2 78,29.8 80,28.4 82,30.7 84,30.3 86,30.1 88,28.1 90,25.1 92,22.5 94,21.2 96,19.5 98,21.9 100,21.4 102,21.4 104,21.7 106,23.8 108,25.7 110,29 112,30.1 114,27.7 116,26 118,24.6 120,23.9 122,22.8 124,22.5 126,22.8 128,20.5 130,20.4 132,22.2 134,26.5 136,29.2 138,31.1 140,30.7 142,30.5 144,30.1 146,30.6 148,32.4 150,29.7 152,26.6 154,24.7 156,22.5 158,22.3 160,25.4 162,27.5 164,27.3 166,28.2 168,28.4 170,30.6 172,30.6 174,32.1 176,30.9 178,28.3 180,25.1 182,22.7 184,21.5 186,22.1 188,21.6 190,19.6 192,19.7 194,19.3 196,23.6 198,26.8 200,29.9 202,29.5 204,28.2 206,27 208,25.3 210,25.7 212,23.6 214,21.3 216,18 218,15.8 220,16.9 222,21.5 224,26.5 226,30.5 228,34.2 230,35 232,36.5 234,38.1 236,41.1 238,38.9 240,33.1 242,26.5 244,20.1 246,21.2 248,23 250,25.8 252,26.2 254,26.8 256,27.3 258,34.2 260,39 262,42.2 264,39 266,33 268,25.4 270,22 272,20.1 274,18.6 276,15.9 278,13.4 280,11 282,13.4 284,19.6 286,25 288,28.5 290,29.9 292,28.9 294,27.8 296,26.3 298,27.2 300,25.8 302,22.8 304,18.4 306,16.6 308,18 310,21.3 312,24.2 314,26.1 316,27.6 318,28.1 320,29.9 322,33.7 324,35.2 326,32.5 328,30 330,27.2 332,25.1 334,25 336,24.6 338,25 340,25.6 342,25.2 344,26.1 346,27.6 348,31 350,31.9 352,32 354,29.5 356,27.7 358,26.6 360,24.2 362,23.6 364,23.2 366,20.9 368,19.2 370,18.7 372,20.7 374,24.9 376,25.6 378,26.6 380,26.6 382,27.4 384,27.1 386,28.9 388,27.4" fill="none" class="acc-s" stroke-width="1.25" stroke-linejoin="round" opacity="0.95"/><text x="10" y="57" class="lbl">F3</text><polyline points="46,56.1 48,56.8 50,55.5 52,55 54,52.7 56,50.3 58,49.9 60,51.9 62,54.6 64,55.4 66,56.2 68,54.8 70,55.7 72,55.3 74,56.1 76,56.1 78,53.1 80,50.2 82,47.5 84,48.1 86,49 88,50.9 90,50.4 92,50.8 94,51 96,53.9 98,56.6 100,58.2 102,58.8 104,57.9 106,54.3 108,54.3 110,52.2 112,52.9 114,52.5 116,52.7 118,52.3 120,52.4 122,54.5 124,57 126,59.2 128,59.4 130,60.2 132,58.4 134,56.9 136,57.9 138,56.7 140,55.4 142,53 144,51.6 146,51 148,50.1 150,51.8 152,53.7 154,54.8 156,54.6 158,55.9 160,56.6 162,56.7 164,57.4 166,54.3 168,52 170,50.4 172,48.7 174,49.2 176,48.9 178,50.6 180,50.8 182,51 184,50.8 186,53.9 188,57.8 190,57.5 192,56.8 194,56.8 196,53.9 198,53.9 200,53.1 202,53.7 204,52.1 206,49.1 208,49.7 210,53.1 212,55 214,58.9 216,61.8 218,63 220,62.3 222,61.5 224,62.5 226,61.3 228,59.4 230,54.1 232,49 234,45.3 236,47.3 238,49.2 240,52.6 242,54 244,52.4 246,54.1 248,58.6 250,62.5 252,62 254,59.7 256,52.8 258,45.8 260,41.8 262,41.4 264,43.9 266,42.9 268,41 270,42.1 272,44.8 274,52.1 276,58 278,61.9 280,60.1 282,58.9 284,55.6 286,55.1 288,54.8 290,55.1 292,50.5 294,47.8 296,49 298,51 300,53.9 302,57.7 304,59.8 306,59 308,59.7 310,59.2 312,61.1 314,61.4 316,59.8 318,54.9 320,52.8 322,50.5 324,49.8 326,52.6 328,51.9 330,51.8 332,52.1 334,53 336,55.7 338,57.7 340,58.6 342,57.5 344,55.1 346,53.2 348,51.3 350,51 352,50.6 354,49 356,48.2 358,48.4 360,48.8 362,51.1 364,54.4 366,56.4 368,56.9 370,55.9 372,56.1 374,55.2 376,56.4 378,55.2 380,53.3 382,51.2 384,51 386,50.1 388,53" fill="none" class="acc-s" stroke-width="1.25" stroke-linejoin="round" opacity="0.95"/><text x="10" y="85" class="lbl">Fz</text><polyline points="46,79.4 48,79.4 50,79.1 52,76.7 54,75.2 56,76.2 58,77.5 60,81.6 62,81.5 64,83.6 66,82.8 68,82.5 70,83.7 72,83.6 74,84.4 76,82.8 78,79.4 80,78.8 82,77.2 84,79.4 86,80.4 88,81.2 90,83.3 92,84.3 94,84.7 96,86.4 98,88.8 100,88.9 102,86.2 104,84.2 106,83.3 108,81.2 110,81.6 112,81.5 114,79.7 116,78.5 118,80.1 120,80.9 122,84.3 124,85.8 126,86.4 128,85.5 130,83.9 132,82.6 134,82.6 136,81.1 138,79.8 140,77.1 142,75.5 144,75.4 146,77.3 148,79.8 150,81.4 152,82.5 154,82.8 156,83.1 158,84.2 160,84.1 162,84.1 164,83.9 166,79.7 168,79.4 170,77.2 172,79.6 174,80.3 176,81.6 178,80.8 180,81.4 182,83.8 184,87.3 186,89.2 188,88.9 190,87 192,85.2 194,84.9 196,82.2 198,81.9 200,81.1 202,80.4 204,77.3 206,78.9 208,79.3 210,84.4 212,85.8 214,87.5 216,85.9 218,84.4 220,84.8 222,83.5 224,82.6 226,80.4 228,76.5 230,72.5 232,71.9 234,72.6 236,75.9 238,77.4 240,78.1 242,79.6 244,81.1 246,85.4 248,86.8 250,87.5 252,84.4 254,80.7 256,78.5 258,77.3 260,77.4 262,78.8 264,79.3 266,77.3 268,78.9 270,82.3 272,87.6 274,91.6 276,92.2 278,91.4 280,88.5 282,85.7 284,84.7 286,85.3 288,82.9 290,79.8 292,76.7 294,77 296,79.6 298,82.8 300,84.5 302,85.8 304,86 306,85.5 308,84.3 310,85.9 312,85.2 314,82.9 316,80 318,76.7 320,75.6 322,75.4 324,76.7 326,78.8 328,78.3 330,79.8 332,79.6 334,83 336,85.1 338,85.1 340,84.5 342,82.9 344,81.6 346,79.5 348,78.9 350,80.2 352,79.5 354,77.9 356,78.2 358,80.8 360,83.2 362,87 364,88.4 366,88.3 368,87.3 370,86.7 372,85.9 374,86.4 376,85 378,81.8 380,80.4 382,79.4 384,78.9 386,82 388,83.4" fill="none" class="ink-s" stroke-width="1.25" stroke-linejoin="round" opacity="0.7"/><text x="10" y="113" class="lbl">C4</text><polyline points="46,111.4 48,111.9 50,110.4 52,107.9 54,107.2 56,106.6 58,107.2 60,109.3 62,110.8 64,112 66,110.3 68,111.5 70,111.9 72,110.5 74,110.8 76,110.2 78,108.1 80,105.4 82,104.3 84,105.9 86,107.3 88,106.6 90,108.3 92,107.9 94,109.7 96,111.3 98,113.3 100,113.8 102,113.7 104,111.8 106,110.7 108,108.3 110,108.5 112,110.1 114,108 116,109.1 118,108.1 120,110 122,111.6 124,114.8 126,114.7 128,114.2 130,113.9 132,113.3 134,111.8 136,113.2 138,110.1 140,109.4 142,107.1 144,105.3 146,107.2 148,109 150,110 152,109.3 154,109.7 156,110.7 158,110.4 160,111.4 162,111.9 164,110.1 166,107.8 168,106.3 170,105.5 172,106.1 174,106.2 176,106.8 178,106.6 180,106.7 182,107.3 184,109.9 186,112.8 188,114.3 190,114.7 192,111.5 194,110.4 196,109.2 198,110 200,110.2 202,109.9 204,106.8 206,107.8 208,109.3 210,110.8 212,114.7 214,116.4 216,115.9 218,114.5 220,114.5 222,115.9 224,114.3 226,113.3 228,111.1 230,107.2 232,104.3 234,104.4 236,106.6 238,108.4 240,109.3 242,108.7 244,109 246,112.3 248,114.3 250,114.4 252,113.3 254,109.9 256,106.4 258,102.2 260,101.5 262,102.5 264,104.1 266,103.5 268,103.9 270,105.3 272,108.3 274,112.2 276,114.9 278,114.6 280,114 282,111.8 284,110.8 286,111.1 288,111 290,108.8 292,107.6 294,107.2 296,108.1 298,108.6 300,113.3 302,114.9 304,115.1 306,115.3 308,114.5 310,115.7 312,116.2 314,114.9 316,111.5 318,108.2 320,106.9 322,105.7 324,106.3 326,108.7 328,107.5 330,107.8 332,108.7 334,109.6 336,112.8 338,113.4 340,112.2 342,111.9 344,108.4 346,106.8 348,107 350,106.7 352,107.2 354,106.1 356,104 358,106.5 360,108.7 362,110.9 364,111.1 366,112.7 368,111.8 370,111.9 372,110.9 374,111.2 376,112.3 378,109.5 380,107.7 382,107.3 384,108.2 386,108.7 388,111.5" fill="none" class="ink-s" stroke-width="1.25" stroke-linejoin="round" opacity="0.7"/><text x="10" y="141" class="lbl">P4</text><polyline points="46,135.6 48,137.9 50,140.8 52,142 54,141.4 56,140.9 58,140.6 60,140.3 62,139.3 64,137.9 66,137.7 68,134.6 70,133 72,133.4 74,134.5 76,134.6 78,136.1 80,138.1 82,137.4 84,138.5 86,139.8 88,140.2 90,139.5 92,139.2 94,136.5 96,135.8 98,134.6 100,134.3 102,136.4 104,135.1 106,135.2 108,136 110,137.5 112,140.9 114,140.8 116,142.5 118,141.4 120,140.8 122,138.9 124,138.5 126,138.2 128,138.9 130,136.7 132,135.6 134,136.4 136,137.4 138,138.5 140,140.3 142,140.7 144,140 146,141.3 148,139.9 150,141.1 152,139.9 154,138.8 156,137.1 158,135.3 160,133.3 162,134.7 164,135.3 166,136.2 168,137.1 170,137 172,137.5 174,138.3 176,138.8 178,140.9 180,140 182,138.1 184,135.4 186,135.4 188,135.3 190,134.8 192,134.7 194,134.4 196,136 198,137.6 200,139.5 202,142.5 204,143 206,143.2 208,141.4 210,141 212,142 214,141 216,140.1 218,138 220,134.3 222,134.6 224,134.4 226,139.4 228,141.1 230,142.1 232,142.7 234,143.3 236,143.7 238,145.7 240,144.9 242,141.3 244,136.4 246,131.6 248,128.2 250,128.3 252,130.4 254,131.3 256,130.4 258,130.3 260,134.2 262,138.8 264,141.1 266,143.6 268,141 270,138.9 272,134.7 274,134.8 276,133.7 278,134.6 280,132.1 282,131 284,130.6 286,133.6 288,138.2 290,141.8 292,144.5 294,142.9 296,142.2 298,142.4 300,142.1 302,141.7 304,140.9 306,137.6 308,136.5 310,136.2 312,136.1 314,138.5 316,137.9 318,139.8 320,139.1 322,140.8 324,141.4 326,140.9 328,141.3 330,142 332,139.3 334,137 336,135.9 338,134.8 340,136 342,135.3 344,134.4 346,134.7 348,135.8 350,137.4 352,138.1 354,140.9 356,140.5 358,139.5 360,137.2 362,137.7 364,138 366,136.5 368,135.5 370,134.3 372,134 374,135.2 376,136.5 378,138.8 380,141 382,139.7 384,140.7 386,140 388,141.3" fill="none" class="acc-s" stroke-width="1.25" stroke-linejoin="round" opacity="0.95"/><text x="10" y="169" class="lbl">O2</text><polyline points="46,166.1 48,165.1 50,163.2 52,160.4 54,159.6 56,160.2 58,161.5 60,163.6 62,165.8 64,167.7 66,166.8 68,167.2 70,168.1 72,167.5 74,166.4 76,164.4 78,161.9 80,158.7 82,159.7 84,161.6 86,162.7 88,164.3 90,165.7 92,165.7 94,168.7 96,171.3 98,172.2 100,172.3 102,171.3 104,168.9 106,165.9 108,165.6 110,166.3 112,164.6 114,164.4 116,163.4 118,164.9 120,167.6 122,169.8 124,171.9 126,171.4 128,170.9 130,169.8 132,167.6 134,168.4 136,166.5 138,163.7 140,161.5 142,160 144,159.8 146,161.6 148,163.6 150,164 152,165.3 154,166.2 156,166.9 158,166.8 160,167.5 162,168.8 164,165.5 166,162.2 168,160.7 170,159.3 172,161.8 174,162 176,163.4 178,164.3 180,165 182,167.5 184,169.6 186,172.6 188,174.2 190,173 192,169.4 194,167.7 196,167.7 198,166.1 200,166.3 202,165.3 204,162.5 206,163.1 208,164.7 210,169.4 212,171.4 214,172.3 216,171.6 218,170.7 220,171 222,170.5 224,169.3 226,165.4 228,161.7 230,157.5 232,155 234,155.8 236,159 238,161.8 240,163.2 242,162.4 244,165.1 246,169.1 248,171 250,171.5 252,169.1 254,163.3 256,159.6 258,157.7 260,156.9 262,157.9 264,160.1 266,159.5 268,160 270,165.5 272,169.3 274,176.1 276,177.9 278,176.7 280,172.3 282,170.1 284,170 286,170.1 288,167.8 290,164.9 292,162 294,161.6 296,164 298,167.8 300,170.8 302,172 304,171.3 306,170.5 308,170.5 310,172.4 312,170.7 314,167.3 316,165.1 318,161.9 320,158.8 322,159.4 324,160.1 326,162.1 328,162.3 330,162.1 332,164.4 334,166.2 336,169.8 338,169.4 340,168.6 342,166.6 344,162.5 346,162.3 348,161.8 350,161.3 352,162.6 354,160 356,161.7 358,162.5 360,166.9 362,168.9 364,172.6 366,171.4 368,170.1 370,169.7 372,170.3 374,169.3 376,167.9 378,165.1 380,162.8 382,163.2 384,164.3 386,165.4 388,168.7" fill="none" class="ink-s" stroke-width="1.25" stroke-linejoin="round" opacity="0.7"/><rect x="46" y="204" width="7" height="10" rx="1.5" fill="#480c69"/><rect x="54" y="204" width="7" height="10" rx="1.5" fill="#55106b"/><rect x="61.9" y="204" width="7" height="10" rx="1.5" fill="#56116b"/><rect x="69.9" y="204" width="7" height="10" rx="1.5" fill="#4a0d69"/><rect x="77.8" y="204" width="7" height="10" rx="1.5" fill="#3b0a60"/><rect x="85.8" y="204" width="7" height="10" rx="1.5" fill="#370a5d"/><rect x="93.7" y="204" width="7" height="10" rx="1.5" fill="#430a68"/><rect x="101.7" y="204" width="7" height="10" rx="1.5" fill="#520f6a"/><rect x="109.6" y="204" width="7" height="10" rx="1.5" fill="#58116b"/><rect x="117.6" y="204" width="7" height="10" rx="1.5" fill="#4e0e6a"/><rect x="125.5" y="204" width="7" height="10" rx="1.5" fill="#3f0a65"/><rect x="133.5" y="204" width="7" height="10" rx="1.5" fill="#380a5d"/><rect x="141.4" y="204" width="7" height="10" rx="1.5" fill="#410a67"/><rect x="149.4" y="204" width="7" height="10" rx="1.5" fill="#53106b"/><rect x="157.3" y="204" width="7" height="10" rx="1.5" fill="#60146c"/><rect x="165.3" y="204" width="7" height="10" rx="1.5" fill="#61146d"/><rect x="173.3" y="204" width="7" height="10" rx="1.5" fill="#5c126c"/><rect x="181.2" y="204" width="7" height="10" rx="1.5" fill="#60146c"/><rect x="189.2" y="204" width="7" height="10" rx="1.5" fill="#781c6c"/><rect x="197.1" y="204" width="7" height="10" rx="1.5" fill="#a22c60"/><rect x="205.1" y="204" width="7" height="10" rx="1.5" fill="#cc4348"/><rect x="213" y="204" width="7" height="10" rx="1.5" fill="#e55f2e"/><rect x="221" y="204" width="7" height="10" rx="1.5" fill="#f37719"/><rect x="228.9" y="204" width="7" height="10" rx="1.5" fill="#f89111"/><rect x="236.9" y="204" width="7" height="10" rx="1.5" fill="#fab41b"/><rect x="244.8" y="204" width="7" height="10" rx="1.5" fill="#f7db50"/><rect x="252.8" y="204" width="7" height="10" rx="1.5" fill="#faf183"/><rect x="260.7" y="204" width="7" height="10" rx="1.5" fill="#f9ed7b"/><rect x="268.7" y="204" width="7" height="10" rx="1.5" fill="#f7cd3a"/><rect x="276.7" y="204" width="7" height="10" rx="1.5" fill="#f9970f"/><rect x="284.6" y="204" width="7" height="10" rx="1.5" fill="#eb6a25"/><rect x="292.6" y="204" width="7" height="10" rx="1.5" fill="#db4f3c"/><rect x="300.5" y="204" width="7" height="10" rx="1.5" fill="#c9414a"/><rect x="308.5" y="204" width="7" height="10" rx="1.5" fill="#b23359"/><rect x="316.4" y="204" width="7" height="10" rx="1.5" fill="#8e2468"/><rect x="324.4" y="204" width="7" height="10" rx="1.5" fill="#69176e"/><rect x="332.3" y="204" width="7" height="10" rx="1.5" fill="#510f6a"/><rect x="340.3" y="204" width="7" height="10" rx="1.5" fill="#4d0d6a"/><rect x="348.2" y="204" width="7" height="10" rx="1.5" fill="#55106b"/><rect x="356.2" y="204" width="7" height="10" rx="1.5" fill="#5c126c"/><rect x="364.1" y="204" width="7" height="10" rx="1.5" fill="#56116b"/><rect x="372.1" y="204" width="7" height="10" rx="1.5" fill="#460b69"/><rect x="380" y="204" width="7" height="10" rx="1.5" fill="#390a5e"/><text x="10" y="213" class="lbl">sal.</text><text x="257" y="230" text-anchor="middle" class="lbl acc-t">window with the highest attribution</text></svg></div>
+                <figcaption><b>fig. 03</b>Illustration: EEG channels and the time window a saliency method flags as most influential.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="paper reveal" id="research-battery">
+            <div class="paper-body">
+              <div class="paper-meta">
+                <span class="status">Course research · DSAI 403 · team of 3</span>
+                <span class="tag">PSO</span><span class="tag">GWO</span><span class="tag">DE</span><span class="tag">LSTM / GRU / Transformer</span>
+              </div>
+              <h3>Nature-inspired optimization for battery health and remaining-life prediction</h3>
+              <p>Lithium-ion batteries lose capacity with every charge cycle, and knowing when one will reach end of life matters for EVs and grid storage. The project is an end-to-end pipeline for State-of-Health (SoH) and Remaining-Useful-Life (RUL) estimation in which swarm and evolutionary algorithms (particle swarm, grey wolf, differential evolution) tune the hyperparameters of LSTM, GRU and Transformer models.</p>
+              <p class="contrib"><b>Evaluation:</b> a non-optimized baseline against the nature-inspired versions, compared on MAE, RMSE and computational cost, with a research paper and fully reproducible code.</p>
+              <div class="paper-stats">
+                <div><strong>3</strong><span>nature-inspired optimizers</span></div>
+                <div><strong>3</strong><span>sequence-model families</span></div>
+                <div><strong>2</strong><span>targets: SoH and RUL</span></div>
+              </div>
+            </div>
+            <div class="paper-visual">
+              <figure>
+                <div class="art"><svg class="art" data-art="battery" viewBox="0 0 400 225" role="img" aria-label="Battery state of health falling over charge cycles, with a forecast crossing the 80 percent end-of-life line and swarm particles tuning the forecast" preserveAspectRatio="xMidYMid meet"><defs><marker id="ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" class="acc-f"/></marker></defs><path d="M40 18v165h340" class="ax" stroke-width="1" fill="none"/><line x1="40" y1="121.1" x2="380" y2="121.1" class="acc-s" stroke-dasharray="4 4" stroke-width="1" opacity=".7"/><text x="48" y="135.1" class="lbl acc-t">end of life · 80% SoH</text><circle cx="40" cy="17.9" r="2" class="dim-f"/><circle cx="44.8" cy="18.4" r="2" class="dim-f"/><circle cx="49.5" cy="18.4" r="2" class="dim-f"/><circle cx="54.3" cy="19.2" r="2" class="dim-f"/><circle cx="59" cy="17.8" r="2" class="dim-f"/><circle cx="63.8" cy="21" r="2" class="dim-f"/><circle cx="68.6" cy="25.5" r="2" class="dim-f"/><circle cx="73.3" cy="22.6" r="2" class="dim-f"/><circle cx="78.1" cy="22.7" r="2" class="dim-f"/><circle cx="82.8" cy="24.7" r="2" class="dim-f"/><circle cx="87.6" cy="25.3" r="2" class="dim-f"/><circle cx="92.4" cy="23.1" r="2" class="dim-f"/><circle cx="97.1" cy="27.4" r="2" class="dim-f"/><circle cx="101.9" cy="26.2" r="2" class="dim-f"/><circle cx="106.6" cy="26.9" r="2" class="dim-f"/><circle cx="111.4" cy="32.1" r="2" class="dim-f"/><circle cx="116.2" cy="32.9" r="2" class="dim-f"/><circle cx="120.9" cy="33" r="2" class="dim-f"/><circle cx="125.7" cy="33" r="2" class="dim-f"/><circle cx="130.4" cy="34.2" r="2" class="dim-f"/><circle cx="135.2" cy="33.5" r="2" class="dim-f"/><circle cx="140" cy="38.3" r="2" class="dim-f"/><circle cx="144.7" cy="35.5" r="2" class="dim-f"/><circle cx="149.5" cy="36.7" r="2" class="dim-f"/><circle cx="154.2" cy="39.2" r="2" class="dim-f"/><circle cx="159" cy="36.8" r="2" class="dim-f"/><circle cx="163.8" cy="38.3" r="2" class="dim-f"/><circle cx="168.5" cy="39.8" r="2" class="dim-f"/><circle cx="173.3" cy="44.8" r="2" class="dim-f"/><circle cx="178" cy="43.5" r="2" class="dim-f"/><circle cx="182.8" cy="47.9" r="2" class="dim-f"/><circle cx="187.6" cy="50.8" r="2" class="dim-f"/><circle cx="192.3" cy="46.6" r="2" class="dim-f"/><circle cx="197.1" cy="46" r="2" class="dim-f"/><circle cx="201.8" cy="53.1" r="2" class="dim-f"/><circle cx="206.6" cy="55.8" r="2" class="dim-f"/><circle cx="211.4" cy="52.3" r="2" class="dim-f"/><circle cx="216.1" cy="57.1" r="2" class="dim-f"/><circle cx="220.9" cy="57" r="2" class="dim-f"/><circle cx="225.6" cy="58.4" r="2" class="dim-f"/><circle cx="230.4" cy="57.8" r="2" class="dim-f"/><polyline points="40,18 43.4,18.5 46.8,18.9 50.2,19.4 53.6,19.9 57,20.4 60.4,20.9 63.8,21.4 67.2,21.9 70.6,22.4 74,22.9 77.4,23.4 80.8,24 84.2,24.5 87.6,25.1 91,25.7 94.4,26.2 97.8,26.8 101.2,27.4 104.6,28.1 108,28.7 111.4,29.3 114.8,30 118.2,30.6 121.6,31.3 125,32 128.4,32.7 131.8,33.4 135.2,34.2 138.6,34.9 142,35.6 145.4,36.4 148.8,37.2 152.2,38 155.6,38.8 159,39.6 162.4,40.5 165.8,41.3 169.2,42.2 172.6,43.1 176,44 179.4,44.9 182.8,45.8 186.2,46.8 189.6,47.8 193,48.7 196.4,49.7 199.8,50.8 203.2,51.8 206.6,52.8 210,53.9 213.4,55 216.8,56.1 220.2,57.2 223.6,58.3 227,59.5 230.4,60.7" fill="none" class="ink-s" stroke-width="1.8"/><polyline points="230.4,60.7 233.8,61.8 237.2,63.1 240.6,64.3 244,65.5 247.4,66.8 250.8,68.1 254.2,69.4 257.6,70.7 261,72 264.4,73.4 267.8,74.7 271.2,76.1 274.6,77.5 278,79 281.4,80.4 284.8,81.9 288.2,83.4 291.6,84.9 295,86.4 298.4,88 301.8,89.5 305.2,91.1 308.6,92.7 312,94.4 315.4,96 318.8,97.7 322.2,99.4 325.6,101.1 329,102.8 332.4,104.6 335.8,106.4 339.2,108.2 342.6,110 346,111.8 349.4,113.7 352.8,115.6 356.2,117.5 359.6,119.4 363,121.4 366.4,123.3 369.8,125.3 373.2,127.3 376.6,129.4 380,131.4" fill="none" class="acc-s" stroke-width="2" stroke-dasharray="5 4"/><path d="M230.4 143.1H360.7" class="acc-s" stroke-width="1.4" marker-end="url(#ar)" fill="none"/><text x="296.5" y="157.1" text-anchor="middle" class="lbl acc-t">remaining useful life</text><line x1="259.6" y1="55.2" x2="262.8" y2="62.5" class="acc2-s" stroke-width="1" opacity=".8"/><circle cx="259.6" cy="55.2" r="2.6" class="acc2-f"/><line x1="285.9" y1="104.4" x2="281.6" y2="94.5" class="acc2-s" stroke-width="1" opacity=".8"/><circle cx="285.9" cy="104.4" r="2.6" class="acc2-f"/><line x1="335.5" y1="106.3" x2="335.8" y2="106.3" class="acc2-s" stroke-width="1" opacity=".8"/><circle cx="335.5" cy="106.3" r="2.6" class="acc2-f"/><line x1="273.4" y1="76.9" x2="275.8" y2="77" class="acc2-s" stroke-width="1" opacity=".8"/><circle cx="273.4" cy="76.9" r="2.6" class="acc2-f"/><line x1="253.7" y1="62.5" x2="249.1" y2="65.5" class="acc2-s" stroke-width="1" opacity=".8"/><circle cx="253.7" cy="62.5" r="2.6" class="acc2-f"/><line x1="292.4" y1="79" x2="297.2" y2="81.8" class="acc2-s" stroke-width="1" opacity=".8"/><circle cx="292.4" cy="79" r="2.6" class="acc2-f"/><line x1="290.6" y1="86" x2="289.1" y2="85.3" class="acc2-s" stroke-width="1" opacity=".8"/><circle cx="290.6" cy="86" r="2.6" class="acc2-f"/><line x1="249.3" y1="56.6" x2="248.4" y2="61.5" class="acc2-s" stroke-width="1" opacity=".8"/><circle cx="249.3" cy="56.6" r="2.6" class="acc2-f"/><line x1="326.6" y1="110.9" x2="327.2" y2="106.7" class="acc2-s" stroke-width="1" opacity=".8"/><circle cx="326.6" cy="110.9" r="2.6" class="acc2-f"/><text x="380" y="199" text-anchor="end" class="lbl">charge cycles →</text><text x="34" y="26" text-anchor="end" class="lbl">SoH</text></svg></div>
+                <figcaption><b>fig. 04</b>Illustration: health falls with each cycle; the model forecasts when it crosses the 80% end-of-life line while a swarm tunes the forecaster.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="paper reveal" id="research-optimizers">
+            <div class="paper-body">
+              <div class="paper-meta">
+                <span class="status">Comparative study</span>
+                <span class="tag">Adam</span><span class="tag">SGD + momentum</span><span class="tag">RMSProp</span><span class="tag">AdaGrad</span>
+              </div>
+              <h3>How optimizers really behave: Adam, SGD-M, RMSProp and AdaGrad</h3>
+              <p>A study of four optimization algorithms from theory to practice: numerical simulations on mathematical test functions, then training runs on MNIST and CIFAR-10.</p>
+              <p class="contrib"><b>Findings:</b> Adam converged quickly and reliably, RMSProp did well on non-stationary objectives, and the best optimizer depends on the task. The interactive figure at the top of this page (fig. 01) runs the same four update rules live.</p>
+              <div class="paper-stats">
+                <div><strong>4</strong><span>optimizers compared</span></div>
+                <div><strong>2</strong><span>benchmarks: MNIST, CIFAR-10</span></div>
+              </div>
+              <div class="paper-links">
+                <a class="link-arrow" href="#top" data-lab-restart>Play with fig. 01 <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </div>
+            <div class="paper-visual">
+              <figure>
+                <div class="art"><svg class="art" data-art="optim" viewBox="0 0 400 225" role="img" aria-label="Paths taken by Adam, SGD with momentum, RMSProp and AdaGrad on an elongated quadratic bowl" preserveAspectRatio="xMidYMid meet"><polyline points="250.9,106 245.4,102.4 238.7,99.8 232.7,98.1 227.6,96.9 223.5,96.1 220.1,95.6 217.2,95.1 214.8,94.8 212.7,94.5 210.9,94.3 209.2,94.1 207.7,94 206.3,93.8 205,93.7 203.7,93.6 202.4,93.5 201.2,93.4 200,93.4 198.8,93.3 197.5,93.2 196.2,93.2 194.8,93.1 193.3,93.1 191.7,93 189.9,93 187.9,93 185.5,93 182.8,93 179.6,93.1 175.6,93.3 170.8,93.7 164.8,94.4 157.9,95.8 151.3,98.3 147.6,101.9 149.1,106 154.6,109.6 161.3,112.2 167.3,113.9 172.4,115.1 176.5,115.9 179.9,116.4 182.8,116.9 185.2,117.2 187.3,117.5 189.1,117.7 190.8,117.9 192.3,118 193.7,118.2 195,118.3 196.3,118.4 197.6,118.5 198.8,118.6 200,118.6 201.2,118.7 202.5,118.8 203.8,118.8 205.2,118.9 206.7,118.9 208.3,119 210.1,119 212.1,119 214.5,119 217.2,119 220.4,118.9 224.4,118.7 229.2,118.3 235.2,117.6 242.1,116.2 248.7,113.7 252.4,110.1 250.9,106" fill="none" class="grid-s" stroke-width="1"/><polyline points="301.8,106 290.8,98.8 277.5,93.7 265.3,90.2 255.2,87.9 246.9,86.3 240.1,85.1 234.5,84.2 229.6,83.6 225.5,83 221.8,82.6 218.4,82.2 215.4,81.9 212.6,81.7 209.9,81.4 207.4,81.2 204.9,81 202.4,80.9 200,80.7 197.5,80.6 195,80.4 192.4,80.3 189.6,80.2 186.6,80.1 183.4,80 179.8,80 175.7,79.9 171.1,79.9 165.6,80 159.1,80.2 151.2,80.6 141.5,81.4 129.6,82.9 115.9,85.7 102.6,90.5 95.2,97.7 98.2,106 109.2,113.2 122.5,118.3 134.7,121.8 144.8,124.1 153.1,125.7 159.9,126.9 165.5,127.8 170.4,128.4 174.5,129 178.2,129.4 181.6,129.8 184.6,130.1 187.4,130.3 190.1,130.6 192.6,130.8 195.1,131 197.6,131.1 200,131.3 202.5,131.4 205,131.6 207.6,131.7 210.4,131.8 213.4,131.9 216.6,132 220.2,132 224.3,132.1 228.9,132.1 234.4,132 240.9,131.8 248.8,131.4 258.5,130.6 270.4,129.1 284.1,126.3 297.4,121.5 304.8,114.3 301.8,106" fill="none" class="grid-s" stroke-width="1"/><polyline points="352.7,106 336.1,95.3 316.2,87.5 298,82.3 282.8,78.8 270.4,76.4 260.2,74.7 251.7,73.4 244.5,72.4 238.2,71.6 232.6,70.9 227.7,70.4 223.1,69.9 218.9,69.5 214.9,69.2 211,68.9 207.3,68.6 203.7,68.3 200,68.1 196.3,67.9 192.5,67.7 188.6,67.5 184.4,67.3 179.9,67.2 175.1,67 169.7,66.9 163.6,66.9 156.6,66.9 148.5,67 138.7,67.3 126.9,67.9 112.3,69.1 94.4,71.3 73.8,75.5 53.9,82.8 42.8,93.6 47.3,106 63.9,116.7 83.8,124.5 102,129.7 117.2,133.2 129.6,135.6 139.8,137.3 148.3,138.6 155.5,139.6 161.8,140.4 167.4,141.1 172.3,141.6 176.9,142.1 181.1,142.5 185.1,142.8 189,143.1 192.7,143.4 196.3,143.7 200,143.9 203.7,144.1 207.5,144.3 211.4,144.5 215.6,144.7 220.1,144.8 224.9,145 230.3,145.1 236.4,145.1 243.4,145.1 251.5,145 261.3,144.7 273.1,144.1 287.7,142.9 305.6,140.7 326.2,136.5 346.1,129.2 357.2,118.4 352.7,106" fill="none" class="grid-s" stroke-width="1"/><polyline points="403.6,106 381.5,91.7 354.9,81.4 330.6,74.4 310.4,69.8 293.8,66.5 280.3,64.2 268.9,62.5 259.3,61.1 250.9,60.1 243.5,59.2 236.9,58.5 230.8,57.9 225.2,57.4 219.8,56.9 214.7,56.5 209.8,56.1 204.9,55.8 200,55.4 195.1,55.2 190,54.9 184.7,54.6 179.2,54.4 173.2,54.2 166.7,54 159.6,53.9 151.5,53.8 142.2,53.8 131.3,54 118.3,54.4 102.5,55.2 83,56.8 59.3,59.8 31.8,65.3 5.2,75 -9.6,89.5 -3.6,106 18.5,120.3 45.1,130.6 69.4,137.6 89.6,142.2 106.2,145.5 119.7,147.8 131.1,149.5 140.7,150.9 149.1,151.9 156.5,152.8 163.1,153.5 169.2,154.1 174.8,154.6 180.2,155.1 185.3,155.5 190.2,155.9 195.1,156.2 200,156.6 204.9,156.8 210,157.1 215.3,157.4 220.8,157.6 226.8,157.8 233.3,158 240.4,158.1 248.5,158.2 257.8,158.2 268.7,158 281.7,157.6 297.5,156.8 317,155.2 340.7,152.2 368.2,146.7 394.8,137 409.6,122.5 403.6,106" fill="none" class="grid-s" stroke-width="1"/><polyline points="454.6,106 426.9,88.1 393.7,75.2 363.3,66.5 338,60.7 317.3,56.7 300.3,53.8 286.1,51.6 274.1,49.9 263.6,48.6 254.4,47.5 246.1,46.6 238.5,45.9 231.4,45.2 224.8,44.6 218.4,44.1 212.2,43.6 206.1,43.2 200,42.8 193.8,42.4 187.5,42.1 180.9,41.8 174,41.5 166.5,41.3 158.4,41 149.4,40.9 139.3,40.8 127.7,40.8 114.1,41 97.9,41.5 78.1,42.5 53.8,44.5 24.1,48.2 -10.3,55.2 -43.5,67.3 -62.1,85.3 -54.6,106 -26.9,123.9 6.3,136.8 36.7,145.5 62,151.3 82.7,155.3 99.7,158.2 113.9,160.4 125.9,162.1 136.4,163.4 145.6,164.5 153.9,165.4 161.5,166.1 168.6,166.8 175.2,167.4 181.6,167.9 187.8,168.4 193.9,168.8 200,169.2 206.2,169.6 212.5,169.9 219.1,170.2 226,170.5 233.5,170.7 241.6,171 250.6,171.1 260.7,171.2 272.3,171.2 285.9,171 302.1,170.5 321.9,169.5 346.2,167.5 375.9,163.8 410.3,156.8 443.5,144.7 462.1,126.7 454.6,106" fill="none" class="grid-s" stroke-width="1"/><polyline points="505.5,106 472.3,84.5 432.4,69 396,58.6 365.6,51.6 340.8,46.8 320.4,43.3 303.4,40.7 288.9,38.7 276.4,37.1 265.3,35.8 255.3,34.7 246.2,33.8 237.7,33 229.7,32.3 222.1,31.7 214.6,31.1 207.3,30.6 200,30.2 192.6,29.7 185,29.3 177.1,29 168.8,28.6 159.8,28.3 150.1,28.1 139.3,27.9 127.2,27.7 113.3,27.8 96.9,28 77.4,28.6 53.7,29.8 24.5,32.2 -11.1,36.7 -52.3,45 -92.2,59.5 -114.5,81.2 -105.5,106 -72.3,127.5 -32.4,143 4,153.4 34.4,160.4 59.2,165.2 79.6,168.7 96.6,171.3 111.1,173.3 123.6,174.9 134.7,176.2 144.7,177.3 153.8,178.2 162.3,179 170.3,179.7 177.9,180.3 185.4,180.9 192.7,181.4 200,181.8 207.4,182.3 215,182.7 222.9,183 231.2,183.4 240.2,183.7 249.9,183.9 260.7,184.1 272.8,184.3 286.7,184.2 303.1,184 322.6,183.4 346.3,182.2 375.5,179.8 411.1,175.3 452.3,167 492.2,152.5 514.5,130.8 505.5,106" fill="none" class="grid-s" stroke-width="1"/><polyline points="556.4,106 517.7,80.9 471.1,62.9 428.6,50.7 393.2,42.6 364.2,36.9 340.4,32.9 320.6,29.8 303.7,27.5 289.1,25.6 276.2,24.1 264.5,22.9 253.9,21.8 244,20.9 234.7,20.1 225.7,19.3 217.1,18.7 208.5,18.1 200,17.5 191.4,17 182.5,16.6 173.3,16.1 163.6,15.7 153.1,15.4 141.8,15.1 129.2,14.8 115.1,14.7 98.8,14.7 79.8,15 57,15.7 29.3,17.1 -4.7,19.9 -46.3,25.1 -94.4,34.8 -140.9,51.8 -166.9,77 -156.4,106 -117.7,131.1 -71.1,149.1 -28.6,161.3 6.8,169.4 35.8,175.1 59.6,179.1 79.4,182.2 96.3,184.5 110.9,186.4 123.8,187.9 135.5,189.1 146.1,190.2 156,191.1 165.3,191.9 174.3,192.7 182.9,193.3 191.5,193.9 200,194.5 208.6,195 217.5,195.4 226.7,195.9 236.4,196.3 246.9,196.6 258.2,196.9 270.8,197.2 284.9,197.3 301.2,197.3 320.2,197 343,196.3 370.7,194.9 404.7,192.1 446.3,186.9 494.4,177.2 540.9,160.2 566.9,135 556.4,106" fill="none" class="grid-s" stroke-width="1"/><polyline points="607.3,106 563.1,77.4 509.9,56.7 461.3,42.9 420.8,33.5 387.7,27.1 360.5,22.4 337.8,19 318.5,16.3 301.8,14.2 287,12.4 273.8,11 261.6,9.8 250.3,8.7 239.6,7.8 229.4,6.9 219.5,6.2 209.7,5.5 200,4.9 190.1,4.3 180,3.8 169.5,3.3 158.4,2.8 146.4,2.4 133.5,2.1 119.1,1.8 102.9,1.6 84.3,1.7 62.6,2 36.6,2.8 5,4.4 -33.9,7.6 -81.5,13.6 -136.5,24.7 -189.6,44 -219.3,72.9 -207.3,106 -163.1,134.6 -109.9,155.3 -61.3,169.1 -20.8,178.5 12.3,184.9 39.5,189.6 62.2,193 81.5,195.7 98.2,197.8 113,199.6 126.2,201 138.4,202.2 149.7,203.3 160.4,204.2 170.6,205.1 180.5,205.8 190.3,206.5 200,207.1 209.9,207.7 220,208.2 230.5,208.7 241.6,209.2 253.6,209.6 266.5,209.9 280.9,210.2 297.1,210.4 315.7,210.3 337.4,210 363.4,209.2 395,207.6 433.9,204.4 481.5,198.4 536.5,187.3 589.6,168 619.3,139.1 607.3,106" fill="none" class="grid-s" stroke-width="1"/><polyline points="38,27.5 41.6,30.8 45.2,34 48.8,37.3 52.4,40.5 56,43.7 59.6,46.9 63.2,50 66.8,53.2 70.4,56.3 73.9,59.3 77.5,62.3 81.1,65.3 84.7,68.2 88.2,71.1 91.8,73.9 95.3,76.6 98.9,79.2 102.4,81.8 105.9,84.2 109.4,86.6 112.9,88.8 116.4,91 119.9,93 123.3,95 126.7,96.8 130.1,98.5 133.5,100.1 136.8,101.5 140.1,102.8 143.4,104 146.6,105.1 149.8,106.1 152.9,106.9 156,107.7 159,108.3 162,108.8 164.9,109.2 167.7,109.6 170.5,109.8 173.1,110 175.7,110 178.3,110.1 180.7,110 183,109.9 185.3,109.8 187.4,109.6 189.4,109.4 191.3,109.1 193.2,108.9 194.9,108.6 196.5,108.3 198,108 199.3,107.7 200.6,107.4 201.8,107.2 202.8,106.9 203.7,106.7 204.6,106.4 205.3,106.2 205.9,106 206.5,105.9 206.9,105.7 207.2,105.6 207.5,105.5 207.7,105.4 207.8,105.4 207.9,105.3 207.9,105.3 207.8,105.3 207.7,105.3 207.5,105.4 207.3,105.4 207,105.5 206.7,105.5 206.4,105.6 206.1,105.7 205.8,105.7 205.4,105.8 205.1,105.9 204.7,106 204.3,106.1 204,106.1 203.6,106.2 203.3,106.3 202.9,106.3 202.6,106.4 202.3,106.4 202,106.4 201.7,106.5 201.4,106.5 201.2,106.5 200.9,106.5 200.7,106.5 200.5,106.5" fill="none" class="c-adam" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="200.5" cy="106.5" r="3.2" class="c-adam-f"/><polyline points="38,27.5 38.4,32.1 39.2,40.3 40.4,51.5 42.1,64.5 44.1,78.3 46.6,91.9 49.5,104.4 52.9,115.2 56.7,123.7 60.9,129.6 65.6,132.8 70.5,133.4 75.8,131.5 81.3,127.7 86.9,122.3 92.6,116 98.4,109.1 104.1,102.4 109.6,96.1 115.1,90.8 120.3,86.7 125.3,83.9 130.1,82.6 134.6,82.6 138.9,83.9 142.9,86.4 146.8,89.6 150.4,93.4 153.9,97.4 157.1,101.4 160.3,105.1 163.3,108.4 166.3,111 169.1,112.9 171.8,114 174.5,114.4 177,114.1 179.5,113.2 181.8,111.8 184.1,110.1 186.2,108.2 188.1,106.3 190,104.6 191.7,103 193.2,101.8 194.6,101 195.9,100.5 197,100.5 198.1,100.8 199,101.4 199.7,102.2 200.4,103.2 201,104.3 201.6,105.4 202,106.5 202.4,107.4 202.8,108.1 203.1,108.6 203.4,109 203.7,109.1 203.9,109 204.1,108.7 204.3,108.3 204.4,107.8 204.6,107.3 204.7,106.7 204.7,106.2 204.8,105.7 204.8,105.3 204.7,105 204.7,104.9 204.6,104.8 204.5,104.8 204.4,105 204.3,105.2 204.1,105.4 204,105.7 203.8,106 203.7,106.3 203.5,106.5 203.3,106.7 203.2,106.9 203,107 202.9,107 202.7,107 202.6,106.9 202.5,106.8 202.3,106.6 202.2,106.4 202.1,106.3 202,106.1 201.9,106 201.8,105.9 201.6,105.8" fill="none" class="c-sgdm" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="201.6" cy="105.8" r="3.2" class="c-sgdm-f"/><polyline points="38,27.5 44.6,33.5 49.4,37.7 53.4,41.1 57,44 60.2,46.7 63.2,49.1 66.1,51.4 68.8,53.5 71.4,55.6 74,57.5 76.4,59.4 78.8,61.2 81.2,62.9 83.5,64.6 85.7,66.2 88,67.8 90.2,69.3 92.3,70.8 94.5,72.3 96.6,73.7 98.7,75.1 100.8,76.5 102.8,77.8 104.9,79.1 106.9,80.4 108.9,81.6 110.9,82.8 112.9,84 114.9,85.1 116.9,86.3 118.8,87.3 120.8,88.4 122.7,89.4 124.6,90.4 126.5,91.3 128.4,92.2 130.3,93.1 132.2,93.9 134.1,94.7 135.9,95.5 137.7,96.2 139.6,96.9 141.4,97.6 143.2,98.2 144.9,98.8 146.7,99.3 148.5,99.8 150.2,100.3 151.9,100.7 153.6,101.1 155.3,101.5 156.9,101.8 158.6,102.1 160.2,102.4 161.8,102.7 163.4,102.9 164.9,103.1 166.4,103.3 167.9,103.5 169.4,103.6 170.9,103.8 172.3,103.9 173.7,104 175.1,104.2 176.4,104.3 177.7,104.4 179,104.5 180.3,104.6 181.5,104.7 182.7,104.8 183.8,104.9 184.9,104.9 186,105 187.1,105.1 188.1,105.2 189.1,105.2 190,105.3 190.9,105.4 191.7,105.4 192.5,105.5 193.3,105.5 194,105.6 194.7,105.6 195.3,105.7 195.9,105.7 196.4,105.8 196.9,105.8 197.3,105.8 197.7,105.8 198.1,105.9 198.4,105.9 198.7,105.9 198.9,105.9 199.1,105.9" fill="none" class="c-rmsprop" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="199.1" cy="105.9" r="3.2" class="c-rmsprop-f"/><polyline points="38,27.5 59,46.5 73.7,57.8 85.3,65.9 95.2,72.1 103.7,77.1 111.3,81.2 118.1,84.6 124.3,87.5 129.9,89.8 135,91.9 139.7,93.6 144,95.1 148.1,96.3 151.8,97.4 155.2,98.4 158.4,99.2 161.3,99.9 164,100.5 166.6,101.1 168.9,101.6 171.1,102 173.2,102.4 175,102.7 176.8,103 178.4,103.3 180,103.5 181.4,103.7 182.7,103.9 183.9,104.1 185,104.2 186.1,104.4 187.1,104.5 188,104.6 188.8,104.7 189.6,104.8 190.4,104.9 191,105 191.7,105.1 192.3,105.1 192.8,105.2 193.3,105.3 193.8,105.3 194.2,105.4 194.6,105.4 195,105.5 195.4,105.5 195.7,105.5 196,105.6 196.3,105.6 196.6,105.6 196.8,105.7 197,105.7 197.2,105.7 197.4,105.7 197.6,105.7 197.8,105.8 197.9,105.8 198.1,105.8 198.2,105.8 198.3,105.8 198.5,105.8 198.6,105.8 198.7,105.9 198.8,105.9 198.9,105.9 198.9,105.9 199,105.9 199.1,105.9 199.1,105.9 199.2,105.9 199.3,105.9 199.3,105.9 199.4,105.9 199.4,105.9 199.5,105.9 199.5,105.9 199.5,105.9 199.6,106 199.6,106 199.6,106 199.6,106 199.7,106 199.7,106 199.7,106 199.7,106 199.8,106 199.8,106 199.8,106 199.8,106 199.8,106 199.8,106 199.8,106 199.9,106 199.9,106" fill="none" class="c-adagrad" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="199.9" cy="106" r="3.2" class="c-adagrad-f"/><circle cx="38" cy="27.5" r="5" fill="none" class="ink-s" stroke-width="1.3"/><path d="M196 106h8M200 102v8" class="ink-s" stroke-width="1.3"/><circle cx="30" cy="212" r="3.5" class="c-adam-f"/><text x="38" y="215.5" class="lbl">Adam</text><circle cx="122" cy="212" r="3.5" class="c-sgdm-f"/><text x="130" y="215.5" class="lbl">SGD-M</text><circle cx="214" cy="212" r="3.5" class="c-rmsprop-f"/><text x="222" y="215.5" class="lbl">RMSProp</text><circle cx="306" cy="212" r="3.5" class="c-adagrad-f"/><text x="314" y="215.5" class="lbl">AdaGrad</text></svg></div>
+                <figcaption><b>fig. 05</b>Computed, not drawn: the four update rules from one start point on an elongated bowl, generated with the same code as fig. 01.</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ======================================================== PROJECTS -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-index eyebrow"><span class="num">§4</span> Projects</div>
+          <div>
+            <h2 class="section-title" id="projects-title">Built, measured, <em>explained</em>.</h2>
+            <p class="section-sub">Team and solo work across deep learning, information retrieval and classical ML. Every number below comes from the project's own notebooks or code.</p>
+          </div>
+        </div>
+
+        <div class="proj-tools reveal">
+          <label class="search" for="proj-search">
+            <svg aria-hidden="true"><use href="#i-search"/></svg>
+            <span class="sr-only">Search projects</span>
+            <input id="proj-search" type="search" placeholder="Search projects, e.g. “BiLSTM” or “imbalanced”" autocomplete="off" spellcheck="false" aria-describedby="proj-search-hint">
+            <span class="search-badge" aria-hidden="true">BM25</span>
+          </label>
+          <div class="filters" role="group" aria-label="Filter projects by area">
+            <button type="button" aria-pressed="true" data-filter="all">All <span class="count"></span></button>
+            <button type="button" aria-pressed="false" data-filter="dl">Deep learning <span class="count"></span></button>
+            <button type="button" aria-pressed="false" data-filter="nlp">NLP &amp; IR <span class="count"></span></button>
+            <button type="button" aria-pressed="false" data-filter="ml">Classical ML <span class="count"></span></button>
+            <button type="button" aria-pressed="false" data-filter="apps">Apps &amp; systems <span class="count"></span></button>
+            <button type="button" aria-pressed="false" data-filter="algo">Algorithms <span class="count"></span></button>
+          </div>
+        </div>
+        <p class="search-hint" id="proj-search-hint">Search results are ranked live in your browser with BM25, the same scoring function behind my NutriQuest search engine.</p>
+        <p class="search-status" id="proj-search-status" aria-live="polite"></p>
+
+        <div class="projects" id="projects-grid">
+          <!-- NeuroQuant -->
+          <article class="project wide reveal" id="p-neuroquant" data-cat="dl apps"
+            data-search="quantization model compression int4 int8 mixed precision nsga-ii nsga evolutionary multi-objective pareto onnx runtime latency gptq awq smoothquant adaround qat ptq pytorch hessian surrogate edge deployment graduation project pypi mlflow">
+            <div class="project-cover">
+              <div class="art-wrap"><svg class="art" data-art="pareto" viewBox="0 0 400 225" role="img" aria-label="Illustration of a Pareto front trading model size against accuracy, with later generations shown brighter" preserveAspectRatio="xMidYMid meet"><path d="M44 16v168h336" class="ax" stroke-width="1" fill="none"/><circle cx="297.4" cy="26.8" r="3" fill="#56116b" opacity="0.5"/><circle cx="145.6" cy="112.6" r="3" fill="#5a126c" opacity="0.5"/><circle cx="242.5" cy="38.3" r="3" fill="#5d136c" opacity="0.5"/><circle cx="258" cy="37.1" r="3" fill="#61146d" opacity="0.5"/><circle cx="295.9" cy="61.4" r="3" fill="#65156d" opacity="0.5"/><circle cx="334.9" cy="47.5" r="3" fill="#69176e" opacity="0.5"/><circle cx="195.4" cy="83.9" r="3" fill="#6c186e" opacity="0.5"/><circle cx="323.6" cy="55.1" r="3" fill="#70196d" opacity="0.5"/><circle cx="334.4" cy="48.1" r="3" fill="#741b6c" opacity="0.5"/><circle cx="309" cy="53.7" r="3" fill="#781c6c" opacity="0.5"/><circle cx="164.3" cy="73.2" r="3" fill="#7c1d6b" opacity="0.5"/><circle cx="128.3" cy="66.9" r="3" fill="#7f1f6a" opacity="0.5"/><circle cx="331" cy="62.6" r="3" fill="#83206a" opacity="0.5"/><circle cx="312.9" cy="60.5" r="3" fill="#872269" opacity="0.5"/><circle cx="144.7" cy="79.2" r="3" fill="#8b2368" opacity="0.6"/><circle cx="325.2" cy="47.4" r="3" fill="#8f2468" opacity="0.6"/><circle cx="244.8" cy="64.6" r="3" fill="#922667" opacity="0.6"/><circle cx="329.2" cy="59.8" r="3" fill="#962766" opacity="0.6"/><circle cx="290" cy="63.7" r="3" fill="#9a2964" opacity="0.6"/><circle cx="358.2" cy="73" r="3" fill="#9e2a62" opacity="0.6"/><circle cx="287.3" cy="79" r="3" fill="#a22c60" opacity="0.6"/><circle cx="141.4" cy="62.1" r="3" fill="#a52e5e" opacity="0.6"/><circle cx="331.6" cy="41.3" r="3" fill="#a92f5d" opacity="0.6"/><circle cx="196.2" cy="61" r="3" fill="#ad315b" opacity="0.6"/><circle cx="263.9" cy="48.6" r="3" fill="#b13259" opacity="0.6"/><circle cx="168.7" cy="93.2" r="3" fill="#b53457" opacity="0.6"/><circle cx="304.6" cy="56.2" r="3" fill="#b83656" opacity="0.6"/><circle cx="225" cy="40.3" r="3" fill="#bc3754" opacity="0.6"/><circle cx="310" cy="56.9" r="3" fill="#bf3a51" opacity="0.7"/><circle cx="360.9" cy="66.5" r="3" fill="#c23c4f" opacity="0.7"/><circle cx="336.5" cy="67.1" r="3" fill="#c53e4d" opacity="0.7"/><circle cx="202.3" cy="66.4" r="3" fill="#c8414a" opacity="0.7"/><circle cx="220" cy="53" r="3" fill="#cc4348" opacity="0.7"/><circle cx="276.4" cy="45.1" r="3" fill="#cf4645" opacity="0.7"/><circle cx="335.3" cy="28.3" r="3" fill="#d24843" opacity="0.7"/><circle cx="148.8" cy="74.2" r="3" fill="#d54b41" opacity="0.7"/><circle cx="134.8" cy="82.8" r="3" fill="#d84d3e" opacity="0.7"/><circle cx="195.7" cy="72.7" r="3" fill="#db4f3c" opacity="0.7"/><circle cx="170.2" cy="41.6" r="3" fill="#de5239" opacity="0.7"/><circle cx="280.6" cy="49.8" r="3" fill="#e05636" opacity="0.7"/><circle cx="290" cy="47.2" r="3" fill="#e25933" opacity="0.7"/><circle cx="173.3" cy="48.9" r="3" fill="#e45d30" opacity="0.7"/><circle cx="286.9" cy="44.7" r="3" fill="#e6612d" opacity="0.8"/><circle cx="202.9" cy="59" r="3" fill="#e8642a" opacity="0.8"/><circle cx="354.9" cy="26.7" r="3" fill="#ea6827" opacity="0.8"/><circle cx="245" cy="40.9" r="3" fill="#ec6b24" opacity="0.8"/><circle cx="193.4" cy="50.2" r="3" fill="#ee6f21" opacity="0.8"/><circle cx="236.9" cy="47.2" r="3" fill="#f0731d" opacity="0.8"/><circle cx="233.7" cy="43.7" r="3" fill="#f2761a" opacity="0.8"/><circle cx="146.5" cy="54.6" r="3" fill="#f37a18" opacity="0.8"/><circle cx="157.8" cy="71.4" r="3" fill="#f47e17" opacity="0.8"/><circle cx="325.4" cy="26.7" r="3" fill="#f58315" opacity="0.8"/><circle cx="206.8" cy="35.9" r="3" fill="#f68714" opacity="0.8"/><circle cx="158" cy="54.7" r="3" fill="#f78b13" opacity="0.8"/><circle cx="132.5" cy="72.9" r="3" fill="#f88f11" opacity="0.8"/><circle cx="218.4" cy="51.9" r="3" fill="#f89310" opacity="0.8"/><circle cx="340.3" cy="25.4" r="3" fill="#f9980e" opacity="0.9"/><circle cx="193.9" cy="43.1" r="3" fill="#fa9c0d" opacity="0.9"/><circle cx="130.7" cy="66.3" r="3" fill="#fba00c" opacity="0.9"/><circle cx="359.8" cy="26.7" r="3" fill="#fca40a" opacity="0.9"/><circle cx="166.8" cy="55.8" r="3" fill="#fca90e" opacity="0.9"/><circle cx="133.7" cy="70.7" r="3" fill="#fbad14" opacity="0.9"/><circle cx="148" cy="54.6" r="3" fill="#fab219" opacity="0.9"/><circle cx="288.3" cy="31.8" r="3" fill="#fab71f" opacity="0.9"/><circle cx="262.1" cy="33.7" r="3" fill="#f9bb25" opacity="0.9"/><circle cx="332.7" cy="28.6" r="3" fill="#f9c02a" opacity="0.9"/><circle cx="189.8" cy="45.8" r="3" fill="#f8c430" opacity="0.9"/><circle cx="249.7" cy="25.3" r="3" fill="#f8c935" opacity="0.9"/><circle cx="258" cy="28.8" r="3" fill="#f7ce3b" opacity="0.9"/><circle cx="330.4" cy="26.3" r="3" fill="#f7d240" opacity="0.9"/><polyline points="128.3,66.9 130.7,66.3 141.4,62.1 146.5,54.6 148,54.6 170.2,41.6 206.8,35.9 249.7,25.3" fill="none" class="acc-s" stroke-width="2" stroke-linejoin="round"/><circle cx="128.3" cy="66.9" r="3.6" class="acc-f"/><circle cx="130.7" cy="66.3" r="3.6" class="acc-f"/><circle cx="141.4" cy="62.1" r="3.6" class="acc-f"/><circle cx="146.5" cy="54.6" r="3.6" class="acc-f"/><circle cx="148" cy="54.6" r="3.6" class="acc-f"/><circle cx="170.2" cy="41.6" r="3.6" class="acc-f"/><circle cx="206.8" cy="35.9" r="3.6" class="acc-f"/><circle cx="249.7" cy="25.3" r="3.6" class="acc-f"/><text x="380" y="200" text-anchor="end" class="lbl">model size →</text><text x="36" y="24" text-anchor="end" class="lbl">acc</text><text x="56" y="28" class="lbl acc-t">Pareto front</text></svg></div>
+              <span class="cover-label">illustration · a Pareto front of size vs. accuracy</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top"><span class="project-kind">Graduation project · team of 4</span><span class="tag hot">on PyPI</span></div>
+              <h3>NeuroQuant</h3>
+              <p class="project-sub">Multi-objective mixed-precision quantization for PyTorch</p>
+              <p>Turns FP32 models into deployable INT8 or mixed INT4/INT8 ONNX files. A from-scratch NSGA-II picks a bit-width for every layer, trading accuracy against real file size and ONNX Runtime latency, with a gradient-boosting surrogate to cut the cost of the search.</p>
+              <div class="metric-row">
+                <div><strong>7</strong><span>quantization methods</span></div>
+                <div><strong>3</strong><span>objectives optimized jointly</span></div>
+                <div><strong>v2.1</strong><span>published on PyPI</span></div>
+              </div>
+              <div class="tags"><span class="tag">PyTorch</span><span class="tag">ONNX Runtime</span><span class="tag">NSGA-II</span><span class="tag">GPTQ</span><span class="tag">MLflow</span></div>
+              <div class="project-actions">
+                <button class="case-btn" type="button" data-case="neuroquant"><svg aria-hidden="true"><use href="#i-book"/></svg> Case study</button>
+                <a class="gh-link" href="https://github.com/AbdelazizElHelaly11/NeuroQuant" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg> Code</a>
+                <a class="gh-link" href="https://pypi.org/project/neuroquant/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-arrow-ne"/></svg> PyPI</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- NutriQuest -->
+          <article class="project reveal" id="p-nutriquest" data-cat="nlp apps"
+            data-search="information retrieval search engine bm25 tf-idf tfidf pyterrier terrier nltk stemming query expansion pseudo relevance feedback rerank ranking rag retrieval augmented chatbot llm openrouter streamlit fitness nutrition wikipedia youtube google ndcg">
+            <div class="project-cover">
+              <div class="art-wrap"><svg class="art" data-art="nutri" viewBox="0 0 400 225" role="img" aria-label="A search query with five ranked results and their relevance scores" preserveAspectRatio="xMidYMid meet"><rect x="34" y="20" width="332" height="38" rx="19" class="surf-f" style="stroke:var(--line-strong)"/><circle cx="56" cy="39" r="7" fill="none" class="ink-s" stroke-width="1.6"/><path d="M61 44l5 5" class="ink-s" stroke-width="1.6"/><text x="76" y="43.5" class="q-t">high-protein vegan breakfast</text><rect x="268" y="31" width="1.6" height="16" class="acc-f caret"/><text x="34" y="80" class="lbl">BM25 + query expansion</text><text x="366" y="80" text-anchor="end" class="lbl">score</text><text x="34" y="103" class="lbl">#1</text><rect x="58" y="94" width="252" height="12" rx="6" class="grid-f"/><rect x="58" y="94" width="236.9" height="12" rx="6" class="acc-f" opacity="1"/><text x="366" y="104" text-anchor="end" class="lbl">0.94</text><text x="34" y="128" class="lbl">#2</text><rect x="58" y="119" width="252" height="12" rx="6" class="grid-f"/><rect x="58" y="119" width="204.1" height="12" rx="6" class="ink-f" opacity="0.7"/><text x="366" y="129" text-anchor="end" class="lbl">0.81</text><text x="34" y="153" class="lbl">#3</text><rect x="58" y="144" width="252" height="12" rx="6" class="grid-f"/><rect x="58" y="144" width="166.3" height="12" rx="6" class="ink-f" opacity="0.6"/><text x="366" y="154" text-anchor="end" class="lbl">0.66</text><text x="34" y="178" class="lbl">#4</text><rect x="58" y="169" width="252" height="12" rx="6" class="grid-f"/><rect x="58" y="169" width="131" height="12" rx="6" class="ink-f" opacity="0.4"/><text x="366" y="179" text-anchor="end" class="lbl">0.52</text><text x="34" y="203" class="lbl">#5</text><rect x="58" y="194" width="252" height="12" rx="6" class="grid-f"/><rect x="58" y="194" width="93.2" height="12" rx="6" class="ink-f" opacity="0.3"/><text x="366" y="204" text-anchor="end" class="lbl">0.37</text></svg></div>
+              <span class="cover-label">illustration · ranked retrieval</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top"><span class="project-kind">IR course project · team of 2</span></div>
+              <h3>NutriQuest</h3>
+              <p class="project-sub">Fitness &amp; nutrition search engine with a RAG chatbot</p>
+              <p>Indexes 525 search results from Wikipedia, YouTube and Google across 35 topics. BM25 and TF-IDF retrieval in PyTerrier, pseudo-relevance-feedback query expansion and source-aware re-ranking, plus a chatbot that answers from the top retrieved documents.</p>
+              <div class="metric-row">
+                <div><strong>525</strong><span>documents indexed</span></div>
+                <div><strong>35</strong><span>topics · 3 sources</span></div>
+              </div>
+              <div class="tags"><span class="tag">PyTerrier</span><span class="tag">BM25</span><span class="tag">NLTK</span><span class="tag">OpenRouter</span><span class="tag">Streamlit</span></div>
+              <div class="project-actions">
+                <button class="case-btn" type="button" data-case="nutriquest"><svg aria-hidden="true"><use href="#i-book"/></svg> Case study</button>
+                <a class="gh-link" href="https://github.com/abdelrahmanelsayed20/NurtriQuest" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sentiment -->
+          <article class="project reveal" id="p-sentiment" data-cat="nlp dl apps"
+            data-search="sentiment analysis classification bilstm lstm rnn glove embeddings deep learning tensorflow keras nlp text llm ollama llama deepseek langchain report pdf weasyprint streamlit google sheets real-time customer reviews feedback restaurant">
+            <div class="project-cover">
+              <div class="art-wrap"><svg class="art" data-art="sentiment" viewBox="0 0 400 225" role="img" aria-label="A live sentiment score over time crossing between positive and negative, feeding a generated PDF report" preserveAspectRatio="xMidYMid meet"><defs><clipPath id="sent-pos"><rect x="0" y="0" width="400" height="112"/></clipPath><clipPath id="sent-neg"><rect x="0" y="112" width="400" height="225"/></clipPath></defs><path d="M30 112 L30 110.1 L34.5 97.5 L39 91.9 L43.5 78.3 L48 76.1 L52.5 65.9 L57 62 L61.5 64.6 L66 62.5 L70.5 73.5 L75 73.5 L79.5 80.2 L84 87.4 L88.5 99.7 L93 100.1 L97.5 105.3 L102 101.3 L106.5 107.9 L111 102.5 L115.5 101 L120 103.4 L124.5 103.2 L129 93.4 L133.5 97.8 L138 96.8 L142.5 99 L147 97.4 L151.5 94.9 L156 105.7 L160.5 110.8 L165 106.3 L169.5 114 L174 114.3 L178.5 108.2 L183 113.4 L187.5 108.8 L192 105.7 L196.5 93.4 L201 88.6 L205.5 81.1 L210 79.6 L214.5 72.9 L219 72.8 L223.5 78.6 L228 76.8 L232.5 83.2 L237 93.9 L241.5 99.1 L246 112 L250.5 129.7 L255 131.9 L259.5 148.3 L264 157 L268.5 158.4 L273 168.8 L277.5 171.1 L282 163.5 L286.5 165.8 L291 153.5 L295.5 157.1 L300 146.9 L300 112 Z" class="acc-f" opacity=".2" clip-path="url(#sent-pos)"/><path d="M30 112 L30 110.1 L34.5 97.5 L39 91.9 L43.5 78.3 L48 76.1 L52.5 65.9 L57 62 L61.5 64.6 L66 62.5 L70.5 73.5 L75 73.5 L79.5 80.2 L84 87.4 L88.5 99.7 L93 100.1 L97.5 105.3 L102 101.3 L106.5 107.9 L111 102.5 L115.5 101 L120 103.4 L124.5 103.2 L129 93.4 L133.5 97.8 L138 96.8 L142.5 99 L147 97.4 L151.5 94.9 L156 105.7 L160.5 110.8 L165 106.3 L169.5 114 L174 114.3 L178.5 108.2 L183 113.4 L187.5 108.8 L192 105.7 L196.5 93.4 L201 88.6 L205.5 81.1 L210 79.6 L214.5 72.9 L219 72.8 L223.5 78.6 L228 76.8 L232.5 83.2 L237 93.9 L241.5 99.1 L246 112 L250.5 129.7 L255 131.9 L259.5 148.3 L264 157 L268.5 158.4 L273 168.8 L277.5 171.1 L282 163.5 L286.5 165.8 L291 153.5 L295.5 157.1 L300 146.9 L300 112 Z" class="c-rmsprop-f" opacity=".18" clip-path="url(#sent-neg)"/><line x1="30" y1="112" x2="300" y2="112" class="ax" stroke-width="1"/><polyline points="30,110.1 34.5,97.5 39,91.9 43.5,78.3 48,76.1 52.5,65.9 57,62 61.5,64.6 66,62.5 70.5,73.5 75,73.5 79.5,80.2 84,87.4 88.5,99.7 93,100.1 97.5,105.3 102,101.3 106.5,107.9 111,102.5 115.5,101 120,103.4 124.5,103.2 129,93.4 133.5,97.8 138,96.8 142.5,99 147,97.4 151.5,94.9 156,105.7 160.5,110.8 165,106.3 169.5,114 174,114.3 178.5,108.2 183,113.4 187.5,108.8 192,105.7 196.5,93.4 201,88.6 205.5,81.1 210,79.6 214.5,72.9 219,72.8 223.5,78.6 228,76.8 232.5,83.2 237,93.9 241.5,99.1 246,112 250.5,129.7 255,131.9 259.5,148.3 264,157 268.5,158.4 273,168.8 277.5,171.1 282,163.5 286.5,165.8 291,153.5 295.5,157.1 300,146.9" fill="none" class="ink-s" stroke-width="1.8" stroke-linejoin="round"/><text x="30" y="24" class="lbl acc-t">positive</text><text x="30" y="212" class="lbl neg-t">negative</text><g transform="translate(322 66)"><rect width="56" height="70" rx="7" class="surf-f" style="stroke:var(--line-strong)"/><path d="M11 16h34M11 26h28M11 36h32M11 46h20" class="ink-s" stroke-width="2" stroke-linecap="round" opacity=".6"/><rect x="11" y="54" width="18" height="6" rx="3" class="acc-f"/><text x="28" y="88" text-anchor="middle" class="lbl">PDF report</text></g><path d="M304 101 h12" class="acc-s" stroke-width="1.4" stroke-dasharray="3 3"/></svg></div>
+              <span class="cover-label">illustration · sentiment stream to report</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top"><span class="project-kind">Team project · NLP + LLMs</span></div>
+              <h3>Real-Time Sentiment Analyzer</h3>
+              <p class="project-sub">Customer feedback in, management report out</p>
+              <p>Polls a Google Sheet of reviews every 30 seconds, labels each new review with a GloVe-initialised BiLSTM, then has a local LLM (LLaMA 3 or DeepSeek-R1 via Ollama) write a four-part insight report, exported to PDF.</p>
+              <div class="metric-row">
+                <div><strong>97.25%</strong><span>test accuracy</span></div>
+                <div><strong>62,509</strong><span>held-out reviews</span></div>
+                <div><strong>0.97</strong><span>macro-F1</span></div>
+              </div>
+              <div class="tags"><span class="tag">TensorFlow</span><span class="tag">BiLSTM</span><span class="tag">GloVe</span><span class="tag">Ollama</span><span class="tag">Streamlit</span></div>
+              <div class="project-actions">
+                <button class="case-btn" type="button" data-case="sentiment"><svg aria-hidden="true"><use href="#i-book"/></svg> Case study</button>
+                <a class="gh-link" href="https://github.com/abdelrahmanelsayed20/Real-Time-Sentimet-Analyzer-And-Reporter" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- IoT intrusion detection -->
+          <article class="project reveal" id="p-iot" data-cat="ml"
+            data-search="intrusion detection iot network traffic cybersecurity security ddos dos mirai mitm recon multi-class classification imbalanced imbalance smote xgboost lightgbm random forest ensemble feature selection selectkbest scaling tabular macro f1">
+            <div class="project-cover">
+              <div class="art-wrap"><svg class="art" data-art="iot" viewBox="0 0 400 225" role="img" aria-label="Class counts of 938,583 IoT network flows: DDoS 73.2 percent down to MITM 0.7 percent" preserveAspectRatio="xMidYMid meet"><text x="54" y="32" text-anchor="end" class="lbl">DDoS</text><rect x="64" y="18" width="205" height="20" rx="4" class="ink-f" opacity="0.55"/><text x="275" y="32" class="lbl">687,027 · 73.2%</text><text x="54" y="61" text-anchor="end" class="lbl">DoS</text><rect x="64" y="47" width="48.8" height="20" rx="4" class="ink-f" opacity="0.4"/><text x="118.8" y="61" class="lbl">163,428 · 17.4%</text><text x="54" y="90" text-anchor="end" class="lbl">Mirai</text><rect x="64" y="76" width="15.9" height="20" rx="4" class="ink-f" opacity="0.4"/><text x="85.9" y="90" class="lbl">53,395 · 5.7%</text><text x="54" y="119" text-anchor="end" class="lbl">Benign</text><rect x="64" y="105" width="6.6" height="20" rx="4" class="ink-f" opacity="0.4"/><text x="76.6" y="119" class="lbl">21,987 · 2.3%</text><text x="54" y="148" text-anchor="end" class="lbl">Recon</text><rect x="64" y="134" width="2.5" height="20" rx="4" class="acc-f" opacity="1"/><text x="72.5" y="148" class="lbl acc-t">6,433 · 0.7%</text><text x="54" y="177" text-anchor="end" class="lbl">MITM</text><rect x="64" y="163" width="2.5" height="20" rx="4" class="acc-f" opacity="1"/><text x="72.5" y="177" class="lbl acc-t">6,313 · 0.7%</text><text x="64" y="208" class="lbl">938,583 flows · minority classes in orange</text></svg></div>
+              <span class="cover-label">real data · class counts</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top"><span class="project-kind">Course project · classical ML</span></div>
+              <h3>IoT Intrusion Detection</h3>
+              <p class="project-sub">Six-class network-traffic classification at scale</p>
+              <p>Classifies 938,583 IoT network flows into six heavily imbalanced classes (DDoS 73% vs. MITM 0.7%), comparing Random Forest, XGBoost and LightGBM with robust scaling, SelectKBest and SMOTE on the training split only.</p>
+              <div class="metric-row">
+                <div><strong>0.84</strong><span>macro-F1 (XGBoost)</span></div>
+                <div><strong>91.1%</strong><span>hold-out accuracy</span></div>
+                <div><strong>≥0.71</strong><span>recall on every class (RF)</span></div>
+              </div>
+              <div class="tags"><span class="tag">XGBoost</span><span class="tag">LightGBM</span><span class="tag">scikit-learn</span><span class="tag">SMOTE</span></div>
+              <div class="project-actions">
+                <button class="case-btn" type="button" data-case="iot"><svg aria-hidden="true"><use href="#i-book"/></svg> Case study</button>
+                <a class="gh-link" href="https://github.com/abdelrahmanelsayed20/multi-class-classification" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Smart Market -->
+          <article class="project reveal" id="p-market" data-cat="apps"
+            data-search="web app application ecommerce e-commerce online store shop flask sqlalchemy sqlite bcrypt authentication login cart admin catalogue docker container github actions ci python backend bootstrap">
+            <div class="project-cover">
+              <div class="art-wrap"><svg class="art" data-art="market" viewBox="0 0 400 225" role="img" aria-label="A storefront grid of products, two of which flow into a shopping cart" preserveAspectRatio="xMidYMid meet"><rect x="34" y="34" width="52" height="62" rx="10" class="surf-f" style="stroke:var(--line-strong)"/><rect x="43" y="43" width="34" height="28" rx="6" class="grid-f"/><rect x="43" y="78" width="30" height="5" rx="2.5" class="ink-f" opacity=".5"/><rect x="43" y="86" width="18" height="4" rx="2" class="ink-f" opacity="0.35"/><rect x="98" y="34" width="52" height="62" rx="10" class="surf-f" style="stroke:var(--accent)"/><rect x="107" y="43" width="34" height="28" rx="6" class="soft-f"/><rect x="107" y="78" width="30" height="5" rx="2.5" class="ink-f" opacity=".5"/><rect x="107" y="86" width="18" height="4" rx="2" class="acc-f" opacity="1"/><rect x="162" y="34" width="52" height="62" rx="10" class="surf-f" style="stroke:var(--line-strong)"/><rect x="171" y="43" width="34" height="28" rx="6" class="grid-f"/><rect x="171" y="78" width="30" height="5" rx="2.5" class="ink-f" opacity=".5"/><rect x="171" y="86" width="18" height="4" rx="2" class="ink-f" opacity="0.35"/><rect x="226" y="34" width="52" height="62" rx="10" class="surf-f" style="stroke:var(--line-strong)"/><rect x="235" y="43" width="34" height="28" rx="6" class="grid-f"/><rect x="235" y="78" width="30" height="5" rx="2.5" class="ink-f" opacity=".5"/><rect x="235" y="86" width="18" height="4" rx="2" class="ink-f" opacity="0.35"/><rect x="34" y="118" width="52" height="62" rx="10" class="surf-f" style="stroke:var(--line-strong)"/><rect x="43" y="127" width="34" height="28" rx="6" class="grid-f"/><rect x="43" y="162" width="30" height="5" rx="2.5" class="ink-f" opacity=".5"/><rect x="43" y="170" width="18" height="4" rx="2" class="ink-f" opacity="0.35"/><rect x="98" y="118" width="52" height="62" rx="10" class="surf-f" style="stroke:var(--line-strong)"/><rect x="107" y="127" width="34" height="28" rx="6" class="grid-f"/><rect x="107" y="162" width="30" height="5" rx="2.5" class="ink-f" opacity=".5"/><rect x="107" y="170" width="18" height="4" rx="2" class="ink-f" opacity="0.35"/><rect x="162" y="118" width="52" height="62" rx="10" class="surf-f" style="stroke:var(--accent)"/><rect x="171" y="127" width="34" height="28" rx="6" class="soft-f"/><rect x="171" y="162" width="30" height="5" rx="2.5" class="ink-f" opacity=".5"/><rect x="171" y="170" width="18" height="4" rx="2" class="acc-f" opacity="1"/><rect x="226" y="118" width="52" height="62" rx="10" class="surf-f" style="stroke:var(--line-strong)"/><rect x="235" y="127" width="34" height="28" rx="6" class="grid-f"/><rect x="235" y="162" width="30" height="5" rx="2.5" class="ink-f" opacity=".5"/><rect x="235" y="170" width="18" height="4" rx="2" class="ink-f" opacity="0.35"/><path d="M150 65 C 200 65, 260 104, 296 104" fill="none" class="acc-s" stroke-width="1.5" stroke-dasharray="4 4" opacity=".85"/><path d="M214 149 C 264 149, 260 104, 296 104" fill="none" class="acc-s" stroke-width="1.5" stroke-dasharray="4 4" opacity=".85"/><g transform="translate(302 78)"><path d="M2 6h9l7 30h30l6-22H15" fill="none" class="acc-s" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="46" r="4.5" class="acc-f"/><circle cx="44" cy="46" r="4.5" class="acc-f"/><text x="50" y="4" class="lbl acc-t">2</text></g><text x="330" y="148" text-anchor="middle" class="lbl">session cart</text></svg></div>
+              <span class="cover-label">illustration · storefront and cart</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top"><span class="project-kind">Web app · team of 5</span></div>
+              <h3>Smart Market</h3>
+              <p class="project-sub">A full-stack Flask store</p>
+              <p>Bcrypt-hashed admin and customer accounts, brand and category browsing, a session-based cart and admin catalogue management across 24 routes, packaged with a Dockerfile and a GitHub Actions workflow.</p>
+              <div class="tags"><span class="tag">Flask</span><span class="tag">SQLAlchemy</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span></div>
+              <div class="project-actions">
+                <a class="gh-link" href="https://github.com/abdelrahmanelsayed20/Smart-market" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Risk & fraud -->
+          <article class="project compact reveal" id="p-fraud" data-cat="ml"
+            data-search="regression risk score loan credit ridge polynomial catboost optuna hyperparameter tuning fraud detection credit card imbalanced nearmiss undersampling oversampling classification knn logistic regression random forest finance">
+            <div class="project-cover">
+              <div class="art-wrap"><svg class="art" data-art="fraud" viewBox="0 0 400 190" role="img" aria-label="A grid of 600 transactions with a single fraudulent one highlighted, matching the 0.17 percent fraud rate" preserveAspectRatio="xMidYMid meet"><defs><pattern id="fraud-dots" x="32" y="20" width="8.4" height="8.4" patternUnits="userSpaceOnUse"><circle cx="4.2" cy="4.2" r="2" class="dim-f" opacity=".5"/></pattern></defs><rect x="32" y="20" width="336" height="126" fill="url(#fraud-dots)"/><circle cx="263" cy="99.8" r="9" fill="none" class="acc-s" stroke-width="1.5"/><circle cx="263" cy="99.8" r="3.2" class="acc-f"/><text x="32" y="168" class="lbl">1 in 600 shown · real data: 473 of 283,726 (0.17%)</text></svg></div>
+              <span class="cover-label">real ratio · 1 in 600</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top"><span class="project-kind">ML course project · team of 4</span></div>
+              <h3>Loan Risk &amp; Fraud Detection</h3>
+              <p>Predicted loan risk scores (polynomial Ridge, R² 0.972 on a 20% hold-out) and built fraud classifiers where only 0.17% of 283,726 transactions are fraudulent.</p>
+              <div class="tags"><span class="tag">scikit-learn</span><span class="tag">CatBoost</span><span class="tag">Optuna</span></div>
+              <div class="project-actions">
+                <a class="gh-link" href="https://github.com/abdelrahmanelsayed20/risk_score_reg_fraud_class" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Maze -->
+          <article class="project compact reveal" id="p-maze" data-cat="algo"
+            data-search="maze pathfinding search algorithms bfs dfs ucs ids a* astar a-star greedy best first hill climbing simulated annealing q-learning qlearning reinforcement learning genetic algorithm python pyamaze ai artificial intelligence">
+            <div class="project-cover">
+              <div class="art-wrap"><svg class="art" data-art="qlearn" viewBox="0 0 400 225" role="img" aria-label="Q-learning steps per episode over 1000 training episodes, falling from an average of 390 to 87" preserveAspectRatio="xMidYMid meet"><path d="M40 16v168h342" class="ax" stroke-width="1" fill="none"/><line x1="40" y1="150.4" x2="382" y2="150.4" class="grid-s" stroke-width=".6" stroke-dasharray="2 4"/><text x="34" y="153.4" text-anchor="end" class="lbl">100</text><line x1="40" y1="83.2" x2="382" y2="83.2" class="grid-s" stroke-width=".6" stroke-dasharray="2 4"/><text x="34" y="86.2" text-anchor="end" class="lbl">300</text><line x1="40" y1="16" x2="382" y2="16" class="grid-s" stroke-width=".6" stroke-dasharray="2 4"/><text x="34" y="19" text-anchor="end" class="lbl">500</text><circle cx="40" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="41" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="42.1" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="43.1" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="44.1" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="45.1" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="46.2" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="47.2" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="48.2" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="49.2" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="50.3" cy="57.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="51.3" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="52.3" cy="143" r="1.1" class="dim-f" opacity=".45"/><circle cx="53.4" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="54.4" cy="16.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="55.4" cy="141.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="56.4" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="57.5" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="58.5" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="59.5" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="60.5" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="61.6" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="62.6" cy="50.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="63.6" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="64.6" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="65.7" cy="48.3" r="1.1" class="dim-f" opacity=".45"/><circle cx="66.7" cy="148.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="67.7" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="68.8" cy="114.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="69.8" cy="147.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="70.8" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="71.8" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="72.9" cy="141.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="73.9" cy="81.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="74.9" cy="153.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="75.9" cy="159.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="77" cy="131.6" r="1.1" class="dim-f" opacity=".45"/><circle cx="78" cy="151.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="79" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="80.1" cy="137" r="1.1" class="dim-f" opacity=".45"/><circle cx="81.1" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="82.1" cy="159.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="83.1" cy="147.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="84.2" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="85.2" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="86.2" cy="144.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="87.2" cy="155.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="88.3" cy="153.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="89.3" cy="157.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="90.3" cy="137.6" r="1.1" class="dim-f" opacity=".45"/><circle cx="91.4" cy="151.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="92.4" cy="151.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="93.4" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="94.4" cy="139" r="1.1" class="dim-f" opacity=".45"/><circle cx="95.5" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="96.5" cy="167.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="97.5" cy="163.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="98.5" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="99.6" cy="158.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="100.6" cy="151.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="101.6" cy="116.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="102.6" cy="141" r="1.1" class="dim-f" opacity=".45"/><circle cx="103.7" cy="159.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="104.7" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="105.7" cy="161.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="106.8" cy="163.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="107.8" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="108.8" cy="156.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="109.8" cy="164.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="110.9" cy="146.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="111.9" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="112.9" cy="16" r="1.1" class="dim-f" opacity=".45"/><circle cx="113.9" cy="124.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="115" cy="152.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="116" cy="148.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="117" cy="165.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="118.1" cy="139.6" r="1.1" class="dim-f" opacity=".45"/><circle cx="119.1" cy="144.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="120.1" cy="151.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="121.1" cy="157.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="122.2" cy="151.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="123.2" cy="155.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="124.2" cy="147" r="1.1" class="dim-f" opacity=".45"/><circle cx="125.2" cy="156.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="126.3" cy="165.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="127.3" cy="134.3" r="1.1" class="dim-f" opacity=".45"/><circle cx="128.3" cy="139" r="1.1" class="dim-f" opacity=".45"/><circle cx="129.4" cy="157.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="130.4" cy="158.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="131.4" cy="149.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="132.4" cy="140.3" r="1.1" class="dim-f" opacity=".45"/><circle cx="133.5" cy="137" r="1.1" class="dim-f" opacity=".45"/><circle cx="134.5" cy="151.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="135.5" cy="164.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="136.5" cy="157.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="137.6" cy="157.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="138.6" cy="161.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="139.6" cy="154.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="140.6" cy="159.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="141.7" cy="141.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="142.7" cy="163.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="143.7" cy="137.6" r="1.1" class="dim-f" opacity=".45"/><circle cx="144.8" cy="160.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="145.8" cy="149.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="146.8" cy="166.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="147.8" cy="159.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="148.9" cy="159.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="149.9" cy="165.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="150.9" cy="163.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="151.9" cy="154.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="153" cy="161.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="154" cy="165.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="155" cy="157.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="156.1" cy="165.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="157.1" cy="139.6" r="1.1" class="dim-f" opacity=".45"/><circle cx="158.1" cy="159.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="159.1" cy="159.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="160.2" cy="133.6" r="1.1" class="dim-f" opacity=".45"/><circle cx="161.2" cy="147" r="1.1" class="dim-f" opacity=".45"/><circle cx="162.2" cy="160.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="163.2" cy="149.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="164.3" cy="150.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="165.3" cy="148.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="166.3" cy="163.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="167.4" cy="163.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="168.4" cy="143" r="1.1" class="dim-f" opacity=".45"/><circle cx="169.4" cy="163.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="170.4" cy="168.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="171.5" cy="155.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="172.5" cy="152.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="173.5" cy="160.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="174.5" cy="151.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="175.6" cy="157.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="176.6" cy="161.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="177.6" cy="158.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="178.6" cy="147" r="1.1" class="dim-f" opacity=".45"/><circle cx="179.7" cy="151.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="180.7" cy="157.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="181.7" cy="138.3" r="1.1" class="dim-f" opacity=".45"/><circle cx="182.8" cy="153.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="183.8" cy="161.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="184.8" cy="146.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="185.8" cy="150.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="186.9" cy="148.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="187.9" cy="163.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="188.9" cy="155.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="189.9" cy="159.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="191" cy="134.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="192" cy="163.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="193" cy="163.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="194.1" cy="161.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="195.1" cy="157.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="196.1" cy="145.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="197.1" cy="149.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="198.2" cy="167.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="199.2" cy="166.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="200.2" cy="164.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="201.2" cy="163.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="202.3" cy="138.3" r="1.1" class="dim-f" opacity=".45"/><circle cx="203.3" cy="157.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="204.3" cy="164.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="205.4" cy="153.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="206.4" cy="147.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="207.4" cy="153.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="208.4" cy="132.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="209.5" cy="155.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="210.5" cy="155.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="211.5" cy="167.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="212.5" cy="171.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="213.6" cy="153.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="214.6" cy="151.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="215.6" cy="166.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="216.6" cy="158.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="217.7" cy="163.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="218.7" cy="157.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="219.7" cy="154.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="220.8" cy="164.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="221.8" cy="158.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="222.8" cy="171.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="223.8" cy="166.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="224.9" cy="165.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="225.9" cy="161.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="226.9" cy="162.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="227.9" cy="143.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="229" cy="157.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="230" cy="157.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="231" cy="162.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="232.1" cy="160.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="233.1" cy="159.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="234.1" cy="160.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="235.1" cy="127.6" r="1.1" class="dim-f" opacity=".45"/><circle cx="236.2" cy="156.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="237.2" cy="163.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="238.2" cy="167.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="239.2" cy="169.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="240.3" cy="163.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="241.3" cy="155.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="242.3" cy="159.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="243.4" cy="165.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="244.4" cy="152.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="245.4" cy="159.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="246.4" cy="145.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="247.5" cy="149.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="248.5" cy="143.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="249.5" cy="147" r="1.1" class="dim-f" opacity=".45"/><circle cx="250.5" cy="135.6" r="1.1" class="dim-f" opacity=".45"/><circle cx="251.6" cy="157.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="252.6" cy="162.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="253.6" cy="167.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="254.6" cy="143.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="255.7" cy="154.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="256.7" cy="153.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="257.7" cy="163.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="258.8" cy="165.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="259.8" cy="159.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="260.8" cy="169.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="261.8" cy="168.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="262.9" cy="163.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="263.9" cy="165.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="264.9" cy="170.6" r="1.1" class="dim-f" opacity=".45"/><circle cx="265.9" cy="166.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="267" cy="157.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="268" cy="165.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="269" cy="141.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="270.1" cy="141" r="1.1" class="dim-f" opacity=".45"/><circle cx="271.1" cy="155.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="272.1" cy="153.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="273.1" cy="154.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="274.2" cy="134.3" r="1.1" class="dim-f" opacity=".45"/><circle cx="275.2" cy="161.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="276.2" cy="143.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="277.2" cy="157.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="278.3" cy="166.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="279.3" cy="148.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="280.3" cy="165.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="281.4" cy="160.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="282.4" cy="163.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="283.4" cy="163.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="284.4" cy="169.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="285.5" cy="153.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="286.5" cy="166.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="287.5" cy="162.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="288.5" cy="160.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="289.6" cy="161.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="290.6" cy="165.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="291.6" cy="167.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="292.6" cy="161.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="293.7" cy="163.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="294.7" cy="164.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="295.7" cy="163.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="296.8" cy="160.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="297.8" cy="161.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="298.8" cy="152.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="299.8" cy="164.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="300.9" cy="166.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="301.9" cy="140.3" r="1.1" class="dim-f" opacity=".45"/><circle cx="302.9" cy="151.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="303.9" cy="150.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="305" cy="166.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="306" cy="155.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="307" cy="161.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="308.1" cy="169.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="309.1" cy="166.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="310.1" cy="167.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="311.1" cy="150.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="312.2" cy="167.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="313.2" cy="160.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="314.2" cy="166.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="315.2" cy="132.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="316.3" cy="156.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="317.3" cy="166.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="318.3" cy="160.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="319.4" cy="161.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="320.4" cy="155.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="321.4" cy="159.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="322.4" cy="157.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="323.5" cy="148.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="324.5" cy="161.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="325.5" cy="158.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="326.5" cy="166.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="327.6" cy="146.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="328.6" cy="125.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="329.6" cy="148.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="330.6" cy="146.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="331.7" cy="159.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="332.7" cy="161.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="333.7" cy="159.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="334.8" cy="145" r="1.1" class="dim-f" opacity=".45"/><circle cx="335.8" cy="133.6" r="1.1" class="dim-f" opacity=".45"/><circle cx="336.8" cy="159.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="337.8" cy="143.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="338.9" cy="151.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="339.9" cy="161.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="340.9" cy="165.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="341.9" cy="167.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="343" cy="162.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="344" cy="161.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="345" cy="149.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="346.1" cy="166.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="347.1" cy="167.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="348.1" cy="164.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="349.1" cy="161.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="350.2" cy="166.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="351.2" cy="159.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="352.2" cy="145.7" r="1.1" class="dim-f" opacity=".45"/><circle cx="353.2" cy="161.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="354.3" cy="157.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="355.3" cy="146.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="356.3" cy="165.9" r="1.1" class="dim-f" opacity=".45"/><circle cx="357.4" cy="160.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="358.4" cy="167.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="359.4" cy="166.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="360.4" cy="163.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="361.5" cy="161.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="362.5" cy="129.6" r="1.1" class="dim-f" opacity=".45"/><circle cx="363.5" cy="164.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="364.5" cy="139.6" r="1.1" class="dim-f" opacity=".45"/><circle cx="365.6" cy="163.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="366.6" cy="147" r="1.1" class="dim-f" opacity=".45"/><circle cx="367.6" cy="166.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="368.6" cy="153.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="369.7" cy="152.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="370.7" cy="165.2" r="1.1" class="dim-f" opacity=".45"/><circle cx="371.7" cy="150.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="372.8" cy="155.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="373.8" cy="125.5" r="1.1" class="dim-f" opacity=".45"/><circle cx="374.8" cy="146.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="375.8" cy="153.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="376.9" cy="161.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="377.9" cy="157.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="378.9" cy="156.4" r="1.1" class="dim-f" opacity=".45"/><circle cx="379.9" cy="163.8" r="1.1" class="dim-f" opacity=".45"/><circle cx="381" cy="149.1" r="1.1" class="dim-f" opacity=".45"/><circle cx="382" cy="167.9" r="1.1" class="dim-f" opacity=".45"/><polyline points="40,16 41.4,16 42.7,25.6 44.1,22.6 45.5,21.1 46.8,25.1 48.2,23.7 49.6,25.6 51,25.7 52.3,28.1 53.7,31.7 55.1,34.5 56.4,35.5 57.8,39.7 59.2,39.7 60.5,40.6 61.9,47.5 63.3,51 64.6,50.6 66,56.4 67.4,60.8 68.8,65.6 70.1,65.2 71.5,66.9 72.9,64.5 74.2,68.9 75.6,77.1 77,87.5 78.3,88.9 79.7,91.1 81.1,95.9 82.5,99.9 83.8,101.7 85.2,102.6 86.6,101.2 87.9,109.4 89.3,117.8 90.7,119.4 92,123 93.4,119.5 94.8,123 96.1,122.5 97.5,123.5 98.9,123.8 100.3,126.6 101.6,129 103,136.8 104.4,133.8 105.7,128.1 107.1,126.2 108.5,123.5 109.8,121.5 111.2,119.1 112.6,115.8 113.9,113.3 115.3,113 116.7,115.8 118.1,116.1 119.4,119.6 120.8,117.7 122.2,126.4 123.5,129.2 124.9,131.4 126.3,132.4 127.6,134.8 129,140.6 130.4,146.1 131.7,149.1 133.1,148.7 134.5,147.9 135.9,144.8 137.2,145.6 138.6,148.5 140,145.9 141.3,145 142.7,144.9 144.1,146.5 145.4,147.1 146.8,144.5 148.2,145 149.5,145.5 150.9,146.4 152.3,146.8 153.7,149.2 155,148.9 156.4,149 157.8,152.1 159.1,153 160.5,153 161.9,153.7 163.2,153.6 164.6,156.2 166,155.2 167.4,155.6 168.7,155.2 170.1,155.1 171.5,155.7 172.8,154.8 174.2,154.4 175.6,154.4 176.9,153.7 178.3,154.3 179.7,153.3 181,153.3 182.4,153.5 183.8,153.5 185.2,153.3 186.5,153.8 187.9,153.7 189.3,154.5 190.6,154.3 192,154.5 193.4,154.9 194.7,155.4 196.1,154.8 197.5,155.3 198.8,155.2 200.2,155.7 201.6,155.5 203,155.5 204.3,155.9 205.7,155.5 207.1,156.1 208.4,156.3 209.8,153.2 211.2,153.2 212.5,154.4 213.9,155.1 215.3,154.8 216.6,155.6 218,155.7 219.4,156.2 220.8,156.1 222.1,156.2 223.5,156.6 224.9,156.2 226.2,159.7 227.6,159 229,157.5 230.3,157.9 231.7,158.2 233.1,158.5 234.5,158.1 235.8,157.9 237.2,157.3 238.6,157.5 239.9,156.5 241.3,157 242.7,157.3 244,157.3 245.4,158.9 246.8,158.6 248.1,157.9 249.5,157.1 250.9,157.1 252.3,157.4 253.6,157.1 255,156.8 256.4,156.1 257.7,157 259.1,156.9 260.5,156.9 261.8,156.8 263.2,157.1 264.6,157.9 265.9,158.5 267.3,158 268.7,158.7 270.1,157.9 271.4,158 272.8,158.2 274.2,157.8 275.5,157.8 276.9,157 278.3,156.9 279.6,156.5 281,155.7 282.4,155.3 283.7,155.7 285.1,155.3 286.5,155.7 287.9,156.4 289.2,156.4 290.6,156.8 292,157.6 293.3,158 294.7,158.3 296.1,158.5 297.4,158.1 298.8,158.2 300.2,158.4 301.5,158.7 302.9,158.5 304.3,158.2 305.7,158.8 307,159.4 308.4,159.1 309.8,158.5 311.1,157.9 312.5,157.8 313.9,157.2 315.2,157.5 316.6,157.9 318,157 319.4,157.6 320.7,157.5 322.1,156.9 323.5,156.4 324.8,156.3 326.2,156.5 327.6,157 328.9,156.8 330.3,156.6 331.7,156.7 333,156 334.4,155.4 335.8,155 337.2,154.6 338.5,153.5 339.9,153.5 341.3,153.2 342.6,153.4 344,153 345.4,152.8 346.7,153.9 348.1,153.9 349.5,153.7 350.8,154.6 352.2,155.7 353.6,156.2 355,156.5 356.3,156.8 357.7,156.7 359.1,156.4 360.4,156.1 361.8,155.1 363.2,154.5 364.5,152.7 365.9,153.7 367.3,153.2 368.6,153.6 370,154.5 371.4,154.1 372.8,154 374.1,153.7 375.5,154.1 376.9,153.7 378.2,155.4 379.6,155.4 381,156.2 382,156.6" fill="none" class="acc-s" stroke-width="2.2" stroke-linejoin="round"/><text x="110" y="30" class="lbl acc-t">← avg 390 steps (first 100 episodes)</text><text x="382" y="144.8" text-anchor="end" class="lbl acc-t">avg 87 (last 100)</text><text x="382" y="200" text-anchor="end" class="lbl">episode → 1000</text><text x="40" y="200" class="lbl">steps per episode · 50-ep. mean</text></svg></div>
+              <span class="cover-label">real training log · 1,000 episodes</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top"><span class="project-kind">AI course project · team</span></div>
+              <h3>Maze Solvers, BFS to Q-learning</h3>
+              <p>Ten strategies on one maze problem in Python, each animated. The logged Q-learning agent cut its average steps per episode from 390 to 87.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">A*</span><span class="tag">Q-learning</span><span class="tag">GA</span></div>
+              <div class="project-actions">
+                <a class="gh-link" href="https://github.com/abdelrahmanelsayed20/Maze-Solving-Algorithm" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Trie -->
+          <article class="project compact reveal" id="p-trie" data-cat="algo"
+            data-search="trie prefix tree data structures c++ cpp autocomplete spell check misspelling strings search insert delete wildcard">
+            <div class="project-cover">
+              <div class="art-wrap"><svg class="art" data-art="trie" viewBox="0 0 400 225" role="img" aria-label="A trie storing the words cat, car, cart, do and dog, with the prefix search path for car highlighted" preserveAspectRatio="xMidYMid meet"><line x1="200" y1="20" x2="118" y2="60" class="ink-s" stroke-width="1.3"/><line x1="200" y1="20" x2="282" y2="60" class="ink-s" stroke-width="1.3"/><line x1="118" y1="60" x2="118" y2="100" class="ink-s" stroke-width="1.3"/><line x1="282" y1="60" x2="282" y2="100" class="ink-s" stroke-width="1.3"/><line x1="118" y1="100" x2="78" y2="140" class="ink-s" stroke-width="1.3"/><line x1="118" y1="100" x2="158" y2="140" class="ink-s" stroke-width="1.3"/><line x1="282" y1="100" x2="282" y2="140" class="ink-s" stroke-width="1.3"/><line x1="158" y1="140" x2="158" y2="180" class="ink-s" stroke-width="1.3"/><path d="M200 20 L118 60 L118 100 L158 140 L158 180" class="acc-s" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="200" cy="20" r="9" class="surf-f" style="stroke:var(--line-strong)"/><text x="200" y="24" text-anchor="middle" class="node-t">·</text><circle cx="118" cy="60" r="13" class="surf-f" style="stroke:var(--line-strong)"/><text x="118" y="64" text-anchor="middle" class="node-t">c</text><circle cx="282" cy="60" r="13" class="surf-f" style="stroke:var(--line-strong)"/><text x="282" y="64" text-anchor="middle" class="node-t">d</text><circle cx="118" cy="100" r="13" class="surf-f" style="stroke:var(--line-strong)"/><text x="118" y="104" text-anchor="middle" class="node-t">a</text><circle cx="282" cy="100" r="13" class="acc-f"/><text x="282" y="104" text-anchor="middle" class="node-t on">o</text><circle cx="78" cy="140" r="13" class="acc-f"/><text x="78" y="144" text-anchor="middle" class="node-t on">t</text><circle cx="158" cy="140" r="13" class="acc-f"/><text x="158" y="144" text-anchor="middle" class="node-t on">r</text><circle cx="282" cy="140" r="13" class="acc-f"/><text x="282" y="144" text-anchor="middle" class="node-t on">g</text><circle cx="158" cy="180" r="13" class="acc-f"/><text x="158" y="184" text-anchor="middle" class="node-t on">t</text><text x="388" y="214" text-anchor="end" class="lbl acc-t">prefix "car" → car, cart</text><text x="14" y="214" class="lbl">filled node = end of a word</text></svg></div>
+              <span class="cover-label">illustration · prefix search</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top"><span class="project-kind">Data structures · team</span></div>
+              <h3>Trie in C++</h3>
+              <p>A prefix tree with per-node counters: insertion, exact lookup, prefix autocomplete, wildcard and misspelling-tolerant lookup, and deletion.</p>
+              <div class="tags"><span class="tag">C++</span><span class="tag">Data structures</span></div>
+              <div class="project-actions">
+                <a class="gh-link" href="https://github.com/abdelrahmanelsayed20/Trie-implementation-" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg> Code</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================================== SKILLS -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-index eyebrow"><span class="num">§5</span> Skills</div>
+          <div>
+            <h2 class="section-title" id="skills-title">The <em>toolbox</em>.</h2>
+            <p class="section-sub">What I reach for, grouped by job. Highlighted items are the ones I use most.</p>
+          </div>
+        </div>
+
+        <div class="bento">
+          <div class="cell span-6 reveal">
+            <div class="cell-head"><h3>Machine learning &amp; deep learning</h3><span class="cell-icon" aria-hidden="true"><svg><use href="#i-brain"/></svg></span></div>
+            <ul class="skill-list">
+              <li class="core">PyTorch</li><li class="core">scikit-learn</li><li class="core">TensorFlow / Keras</li><li>XGBoost</li><li>LightGBM</li><li>Neural networks</li><li>Pymoo · NSGA-II</li><li>Quantization (PTQ, GPTQ)</li>
+            </ul>
+          </div>
+          <div class="cell span-6 reveal" style="--d:1">
+            <div class="cell-head"><h3>Data science &amp; analytics</h3><span class="cell-icon" aria-hidden="true"><svg><use href="#i-chart"/></svg></span></div>
+            <ul class="skill-list">
+              <li class="core">Pandas</li><li class="core">NumPy</li><li>Matplotlib</li><li>Seaborn</li><li>NLTK</li><li>PyTerrier</li><li>SMOTE</li><li>Statistical analysis</li>
+            </ul>
+          </div>
+          <div class="cell reveal">
+            <div class="cell-head"><h3>Cloud &amp; MLOps</h3><span class="cell-icon" aria-hidden="true"><svg><use href="#i-cloud"/></svg></span></div>
+            <ul class="skill-list">
+              <li class="core">AWS</li><li class="core">Docker</li><li>MLflow</li><li>Hugging Face</li><li>GitHub Actions</li><li>Model deployment</li>
+            </ul>
+          </div>
+          <div class="cell reveal" style="--d:1">
+            <div class="cell-head"><h3>Languages</h3><span class="cell-icon" aria-hidden="true"><svg><use href="#i-code"/></svg></span></div>
+            <ul class="skill-list">
+              <li class="core">Python</li><li class="core">SQL</li><li>C++</li><li>C</li><li>JavaScript</li><li>HTML / CSS</li><li>PowerShell</li>
+            </ul>
+          </div>
+          <div class="cell reveal" style="--d:2">
+            <div class="cell-head"><h3>Apps &amp; tooling</h3><span class="cell-icon" aria-hidden="true"><svg><use href="#i-layers"/></svg></span></div>
+            <ul class="skill-list">
+              <li class="core">Flask</li><li class="core">Streamlit</li><li>SQLAlchemy</li><li>REST APIs</li><li>SQLite</li><li>Git</li><li>Linux</li><li>Jupyter</li>
+            </ul>
+          </div>
+          <div class="cell span-8 reveal">
+            <div class="cell-head"><h3>Specialties</h3><span class="cell-icon" aria-hidden="true"><svg><use href="#i-target"/></svg></span></div>
+            <ul class="skill-list">
+              <li class="core">Explainable AI (XAI)</li><li class="core">Information retrieval</li><li class="core">NLP &amp; sentiment analysis</li><li>Query expansion</li><li>Prompt engineering</li><li>Nature-inspired optimization (PSO, GWO, DE)</li><li>Time-series forecasting</li><li>Model compression</li>
+            </ul>
+          </div>
+          <div class="cell reveal" style="--d:1">
+            <div class="cell-head"><h3>Certifications</h3><span class="cell-icon" aria-hidden="true"><svg><use href="#i-award"/></svg></span></div>
+            <div class="certs">
+              <div class="cert"><span class="cert-badge" aria-hidden="true">AWS</span><div><b>AWS Academy Cloud Foundations</b><span>AWS Academy Graduate</span></div></div>
+              <div class="cert"><span class="cert-badge" aria-hidden="true">G</span><div><b>Foundations: Data, Data, Everywhere</b><span>Google</span></div></div>
+              <div class="cert"><span class="cert-badge" aria-hidden="true">ML</span><div><b>AWS Machine Learning Engineer track</b><span>DEPI · 2024–2025</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= CONTACT -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-index eyebrow"><span class="num">§6</span> Contact</div>
+          <h2 class="contact-title" id="contact-title">Let's build something that <em>learns</em>.</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-mail reveal">
+            <div>
+              <p class="eyebrow contact-kicker">Best way to reach me</p>
+              <a class="addr" href="mailto:s-abdulrahman.hassan@zewailcity.edu.eg">s-abdulrahman.hassan@zewailcity.edu.eg</a>
+              <p class="muted contact-blurb">Hiring for an ML or Data Science internship, or want to collaborate on research? I'd love to hear from you.</p>
+            </div>
+            <div class="row">
+              <a class="btn btn-primary" href="mailto:s-abdulrahman.hassan@zewailcity.edu.eg" data-magnetic><svg aria-hidden="true"><use href="#i-mail"/></svg> Write an email</a>
+              <button class="btn btn-ghost" type="button" data-copy-email><svg aria-hidden="true"><use href="#i-copy"/></svg> Copy address</button>
+            </div>
+          </div>
+          <nav class="contact-links reveal" style="--d:1" aria-label="Profiles">
+            <a href="https://www.linkedin.com/in/abdelrahman-elsayed-887232262/" target="_blank" rel="noopener">
+              <span class="ci" aria-hidden="true"><svg><use href="#i-linkedin"/></svg></span>
+              <span><b>LinkedIn</b><span>/in/abdelrahman-elsayed</span></span>
+              <svg class="go" aria-hidden="true"><use href="#i-arrow-ne"/></svg>
+            </a>
+            <a href="https://github.com/abdelrahmanelsayed20" target="_blank" rel="noopener">
+              <span class="ci" aria-hidden="true"><svg><use href="#i-github"/></svg></span>
+              <span><b>GitHub</b><span>@abdelrahmanelsayed20</span></span>
+              <svg class="go" aria-hidden="true"><use href="#i-arrow-ne"/></svg>
+            </a>
+            <a href="assets/Abdelrahman-Elsayed-CV.pdf" target="_blank" rel="noopener">
+              <span class="ci" aria-hidden="true"><svg><use href="#i-download"/></svg></span>
+              <span><b>Curriculum vitae</b><span>PDF · 2 pages</span></span>
+              <svg class="go" aria-hidden="true"><use href="#i-arrow-ne"/></svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================ FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>© <span data-year>2026</span> Abdelrahman Elsayed Hassan. Hand-built with HTML, CSS and vanilla JS.</p>
+        <div class="foot-links">
+          <a href="https://github.com/abdelrahmanelsayed20" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/abdelrahman-elsayed-887232262/" target="_blank" rel="noopener">LinkedIn</a>
+          <button type="button" data-palette>Command palette <span class="kbd" data-kbd-mod>Ctrl K</span></button>
+          <button type="button" data-top>Back to top ↑</button>
+        </div>
+      </div>
+      <div class="footer-sig" aria-hidden="true">Abdelrahman</div>
+    </div>
+  </footer>
+
+  <!-- ==================================================== CASE STUDIES -->
+  <!-- NeuroQuant -->
+  <dialog class="cs" id="cs-neuroquant" aria-labelledby="cs-neuroquant-title" data-title="NeuroQuant · mixed-precision quantization" data-keywords="quantization pypi nsga graduation compression">
+    <div class="cs-head">
+      <span class="eyebrow">Case study · graduation project</span>
+      <button class="cs-close" type="button" data-close aria-label="Close case study"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="cs-scroll">
+      <h2 id="cs-neuroquant-title">NeuroQuant</h2>
+      <p class="cs-lede">A PyTorch framework, published on PyPI, that compresses neural networks to INT8 or mixed INT4/INT8 precision and exports real, deployable ONNX models.</p>
+      <code class="pip">pip install neuroquant</code>
+      <div class="cs-metrics">
+        <div><strong>7</strong><span>quantization methods</span></div>
+        <div><strong>3</strong><span>objectives: accuracy, size, latency</span></div>
+        <div><strong>39</strong><span>Python modules, about 19.7K lines</span></div>
+        <div><strong>v2.1</strong><span>on PyPI, with a docs site</span></div>
+      </div>
+      <h3>The problem</h3>
+      <p>Deep models are expensive to run on edge and production hardware. Many academic quantization tools only simulate low precision, optimize one objective at a time and ignore real latency. NeuroQuant was designed to produce real INT8 artifacts and to search the trade-off between accuracy, on-disk size and measured latency.</p>
+      <h3>How it works</h3>
+      <ul class="bullets">
+        <li><b>Sensitivity analysis.</b> A per-layer Hessian-diagonal or empirical-Fisher score ranks how fragile each layer is to quantization.</li>
+        <li><b>Evolutionary search.</b> A from-scratch NSGA-II (non-dominated sorting, crowding distance, sensitivity-weighted mutation) assigns INT4 or INT8 to every Conv and Linear layer, keeping the first and last layers at INT8.</li>
+        <li><b>Surrogate-assisted.</b> A gradient-boosting model trained on real evaluations ranks hundreds of candidates per generation, so only the most promising ones are actually quantized and measured.</li>
+        <li><b>Seven quantizers.</b> PTQ with KL and MSE calibration, QAT with BN folding and distillation, GPTQ, SmoothQuant, AWQ, SmoothQuant→GPTQ and AdaRound.</li>
+        <li><b>Deployment fidelity.</b> Static INT8 ONNX export (QDQ format) that reports the real file size and ONNX Runtime latency, backed by a per-layer latency lookup table.</li>
+        <li><b>Analysis.</b> Hypervolume and knee-point selection, Pareto plots, bit-width heatmaps, Grad-CAM and SHAP for interpretability, MLflow tracking and a self-contained HTML report.</li>
+      </ul>
+      <h3>Engineering</h3>
+      <p>A YAML-driven CLI pipeline plus a library API, Pydantic-validated configuration, deterministic seeding and resumable checkpoints, pytest smoke tests on a GitHub Actions matrix (Ubuntu and Windows, Python 3.10–3.12), and MkDocs documentation.</p>
+      <h3>Team</h3>
+      <p>B.Sc. graduation project at Zewail City by Abdelaziz Elhelaly, Abdelwahab Hassan, Mostafa Nashaat and Abdelrahman Elsayed, supervised by Dr. Mohamed Ghalwash and Prof. Ahmed Abdelsamea.</p>
+      <div class="cs-foot">
+        <a class="btn btn-primary btn-sm" href="https://github.com/AbdelazizElHelaly11/NeuroQuant" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg> View the code</a>
+        <a class="btn btn-ghost btn-sm" href="https://pypi.org/project/neuroquant/" target="_blank" rel="noopener">PyPI package</a>
+        <a class="btn btn-ghost btn-sm" href="https://abdelazizelhelaly11.github.io/NeuroQuant/" target="_blank" rel="noopener">Documentation</a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- EEG -->
+  <dialog class="cs" id="cs-eeg" aria-labelledby="cs-eeg-title" data-title="EEG emotion recognition with XAI" data-keywords="eeg research deap explainable brain">
+    <div class="cs-head">
+      <span class="eyebrow">Case study · research</span>
+      <button class="cs-close" type="button" data-close aria-label="Close case study"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="cs-scroll">
+      <h2 id="cs-eeg-title">EEG emotion recognition, explained</h2>
+      <p class="cs-lede">A team benchmark of interpretable deep models that recognize emotional valence from EEG, evaluated on people the models have never seen.</p>
+      <div class="cs-metrics">
+        <div><strong>31</strong><span>subjects, leave-one-subject-out</span></div>
+        <div><strong>1,240</strong><span>trials, 40 per subject</span></div>
+        <div><strong>32</strong><span>EEG channels at 128 Hz</span></div>
+        <div><strong>1.18M</strong><span>parameters in my CNN-BiLSTM</span></div>
+      </div>
+      <h3>The problem</h3>
+      <p>EEG signals vary strongly from person to person, so a model that looks accurate on a random split can fail on a new subject. Deep models are also black boxes. The team evaluated models on the DEAP dataset while holding out one whole subject at a time, and paired each model with explainability diagnostics.</p>
+      <h3>What I built</h3>
+      <ul class="bullets">
+        <li><b>CNN-BiLSTM with multi-head self-attention</b> (PyTorch): two Conv1d blocks over the raw 32-channel signal, a two-layer BiLSTM, four-head self-attention and temporal pooling. 1,179,457 parameters, trained from scratch in each of the 31 folds.</li>
+        <li><b>Gradient saliency and attention maps</b> per channel and per trial on held-out subjects, to see which electrodes and time windows the model relied on.</li>
+        <li><b>A CNN-RNN replication</b> of an explainable model from the literature (TensorFlow/Keras, 4.4M parameters) with band-pass filtering, baseline removal and per-subject normalization, explained with SHAP over channel × time-segment groups.</li>
+      </ul>
+      <h3>Team XAI toolkit</h3>
+      <p>Across the study the team used Captum (Integrated Gradients, DeepLift, feature ablation, saliency), SHAP, functional-connectivity heatmaps and MNE scalp topomaps.</p>
+      <h3>Takeaway</h3>
+      <p>Cross-subject EEG is a hard generalization problem: accuracy on individual held-out subjects ranged from 15% to 95% for my model. That spread is exactly why strict subject-level validation and explainability matter before anyone trusts an EEG classifier.</p>
+      <div class="cs-foot">
+        <a class="btn btn-primary btn-sm" href="https://github.com/abdelrahmanelsayed20/DEAP-Emotion-XAI" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg> View the code</a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- NutriQuest -->
+  <dialog class="cs" id="cs-nutriquest" aria-labelledby="cs-nutriquest-title" data-title="NutriQuest · search engine + RAG chatbot" data-keywords="information retrieval bm25 search rag">
+    <div class="cs-head">
+      <span class="eyebrow">Case study · information retrieval</span>
+      <button class="cs-close" type="button" data-close aria-label="Close case study"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="cs-scroll">
+      <h2 id="cs-nutriquest-title">NutriQuest</h2>
+      <p class="cs-lede">A domain search engine and chatbot for fitness and nutrition, built for Zewail City's Information Retrieval course.</p>
+      <div class="cs-metrics">
+        <div><strong>525</strong><span>documents, 428 unique URLs</span></div>
+        <div><strong>35</strong><span>curated topics</span></div>
+        <div><strong>3</strong><span>sources: Wikipedia, YouTube, Google</span></div>
+        <div><strong>~306K</strong><span>words of indexed page text</span></div>
+      </div>
+      <h3>The problem</h3>
+      <p>Fitness and nutrition advice is scattered across Wikipedia, YouTube and the open web, its quality varies, and general-purpose search does not know the domain vocabulary.</p>
+      <h3>How it works</h3>
+      <ul class="bullets">
+        <li><b>Data.</b> 35 curated topics × 3 sources × top-5 results, giving 525 records with links and scraped text.</li>
+        <li><b>Preprocessing.</b> NLTK tokenization, stop-word removal and Porter stemming, applied identically to documents and queries.</li>
+        <li><b>Retrieval.</b> A PyTerrier index ranked with BM25 and TF-IDF.</li>
+        <li><b>Query expansion.</b> Pseudo-relevance feedback: frequent informative terms from the top BM25 hits are added to the query, which is then re-run.</li>
+        <li><b>Re-ranking and diversity.</b> Term-match scores weighted by source quality, with per-source quotas so results mix Wikipedia, YouTube and Google.</li>
+        <li><b>RAG chatbot.</b> The top-5 BM25 documents become the context for an LLM answer through the OpenRouter API, scoped to fitness and nutrition.</li>
+        <li><b>Evaluation code.</b> Precision, recall, F1 and NDCG@k implemented from scratch.</li>
+      </ul>
+      <h3>Interface</h3>
+      <p>A Streamlit app with a custom dark theme, source filters, topic browsing, dataset statistics and an admin panel.</p>
+      <h3>Team</h3>
+      <p>Two-person course project with Mostafa Nashaat.</p>
+      <div class="cs-foot">
+        <a class="btn btn-primary btn-sm" href="https://github.com/abdelrahmanelsayed20/NurtriQuest" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg> View the code</a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Sentiment -->
+  <dialog class="cs" id="cs-sentiment" aria-labelledby="cs-sentiment-title" data-title="Real-Time Sentiment Analyzer & Reporter" data-keywords="sentiment bilstm llm nlp">
+    <div class="cs-head">
+      <span class="eyebrow">Case study · NLP + LLMs</span>
+      <button class="cs-close" type="button" data-close aria-label="Close case study"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="cs-scroll">
+      <h2 id="cs-sentiment-title">Real-Time Sentiment Analyzer &amp; Reporter</h2>
+      <p class="cs-lede">A near-real-time pipeline that turns raw customer feedback into sentiment labels and LLM-written management reports, with no paid APIs.</p>
+      <div class="cs-metrics">
+        <div><strong>97.25%</strong><span>test accuracy</span></div>
+        <div><strong>0.97</strong><span>macro-F1</span></div>
+        <div><strong>62,509</strong><span>held-out test reviews</span></div>
+        <div><strong>625K</strong><span>labelled reviews in the corpus</span></div>
+      </div>
+      <h3>Results on the held-out set</h3>
+      <figure class="cs-chart">
+        <svg class="art" data-art="sent_cm" viewBox="0 0 400 206" role="img" aria-label="Confusion matrix of the BiLSTM sentiment model on 62,509 held-out reviews: 30,285 true negatives, 1,012 false positives, 704 false negatives, 30,508 true positives" preserveAspectRatio="xMidYMid meet"><text x="198" y="14" text-anchor="middle" class="lbl">predicted</text><text x="22" y="102" class="lbl" transform="rotate(-90 22 102)" text-anchor="middle">actual</text><rect x="122" y="26" width="74" height="74" rx="10" class="acc-f" opacity="1" style="stroke:var(--line-strong)"/><text x="159" y="68" text-anchor="middle" class="cm-t on">30,285</text><rect x="200" y="26" width="74" height="74" rx="10" class="surf-f" opacity="1" style="stroke:var(--line-strong)"/><text x="237" y="68" text-anchor="middle" class="cm-t">1,012</text><rect x="122" y="104" width="74" height="74" rx="10" class="surf-f" opacity="1" style="stroke:var(--line-strong)"/><text x="159" y="146" text-anchor="middle" class="cm-t">704</text><rect x="200" y="104" width="74" height="74" rx="10" class="acc-f" opacity="1" style="stroke:var(--line-strong)"/><text x="237" y="146" text-anchor="middle" class="cm-t on">30,508</text><text x="159" y="196" text-anchor="middle" class="lbl">Negative</text><text x="112" y="67" text-anchor="end" class="lbl">Negative</text><text x="237" y="196" text-anchor="middle" class="lbl">Positive</text><text x="112" y="145" text-anchor="end" class="lbl">Positive</text><text x="294" y="54" class="lbl acc-t">97.25% accuracy</text><text x="294" y="70" class="lbl">0.97 macro-F1</text><text x="294" y="86" class="lbl">62,509 test reviews</text></svg>
+        <figcaption class="figcap"><b>fig. 06</b>Confusion matrix of the BiLSTM on 62,509 held-out reviews, redrawn from the training notebook's output.</figcaption>
+      </figure>
+      <h3>The problem</h3>
+      <p>Cafés and restaurants collect free-text feedback faster than staff can read it. The goal was to label every new review automatically and turn batches of reviews into reports a manager can act on.</p>
+      <h3>Pipeline</h3>
+      <ul class="bullets">
+        <li><b>Model.</b> An embedding layer initialised from GloVe 300-d and fine-tuned, a bidirectional LSTM(128), batch normalization and dropout. 25.5M parameters, trained on 625,094 labelled reviews.</li>
+        <li><b>Ingestion.</b> The app reads a Google Sheet every 30 seconds, processes only new rows and saves its position so it resumes after a restart.</li>
+        <li><b>Reporting.</b> Once enough new reviews arrive, a local LLM (LLaMA 3 or DeepSeek-R1 via Ollama and LangChain) writes a four-part report: executive summary, sentiment analysis, key themes and recommendations.</li>
+        <li><b>Export.</b> Markdown to HTML to a styled A4 PDF with WeasyPrint, downloadable from the Streamlit UI.</li>
+      </ul>
+      <h3>Team</h3>
+      <p>Team project.</p>
+      <div class="cs-foot">
+        <a class="btn btn-primary btn-sm" href="https://github.com/abdelrahmanelsayed20/Real-Time-Sentimet-Analyzer-And-Reporter" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg> View the code</a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- IoT -->
+  <dialog class="cs" id="cs-iot" aria-labelledby="cs-iot-title" data-title="IoT intrusion detection" data-keywords="classification xgboost imbalanced security">
+    <div class="cs-head">
+      <span class="eyebrow">Case study · classical ML</span>
+      <button class="cs-close" type="button" data-close aria-label="Close case study"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="cs-scroll">
+      <h2 id="cs-iot-title">IoT Intrusion Detection</h2>
+      <p class="cs-lede">Detecting and categorizing malicious IoT network traffic from 21 numeric flow features, on a dataset where one class outnumbers another 109 to 1.</p>
+      <div class="cs-metrics">
+        <div><strong>938,583</strong><span>network flows</span></div>
+        <div><strong>6</strong><span>traffic classes</span></div>
+        <div><strong>109:1</strong><span>largest-to-smallest class ratio</span></div>
+        <div><strong>0.84</strong><span>best macro-F1</span></div>
+      </div>
+      <h3>The problem</h3>
+      <p>DDoS makes up 73% of the flows while MITM and Recon are under 1% each, so accuracy alone is misleading. The models were judged on macro-F1 and per-class recall.</p>
+      <h3>What we did</h3>
+      <ul class="bullets">
+        <li><b>Data audit.</b> No missing values; 96,187 duplicate rows (10.2%) found and removed in the main pipeline.</li>
+        <li><b>EDA.</b> Distributions, box plots and a correlation analysis that exposed redundant feature pairs.</li>
+        <li><b>Pipeline.</b> RobustScaler, SelectKBest feature selection and SMOTE applied to the training split only, to avoid leaking synthetic samples into evaluation.</li>
+        <li><b>Models.</b> Random Forest (200 trees), XGBoost (300 trees, depth 7) and LightGBM, including a DART variant.</li>
+      </ul>
+      <h3>Results</h3>
+      <div class="cs-table-wrap">
+        <table class="cs-table">
+          <thead><tr><th>Model</th><th>Setup</th><th>Accuracy</th><th>Macro-F1</th></tr></thead>
+          <tbody>
+            <tr class="hl"><td>XGBoost</td><td>StandardScaler, no resampling</td><td>0.911</td><td>0.84</td></tr>
+            <tr><td>Random Forest</td><td>RobustScaler + SelectKBest + SMOTE</td><td>0.858</td><td>0.82</td></tr>
+            <tr><td>LightGBM</td><td>RobustScaler + SelectKBest + SMOTE</td><td>0.859</td><td>0.81</td></tr>
+            <tr><td>LightGBM DART</td><td>IQR clipping</td><td>0.859</td><td>0.67</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="cs-note">Each approach used different preprocessing; the best XGBoost run kept duplicate rows. The SMOTE-balanced Random Forest kept recall at or above 0.71 for every class, and the main remaining error was confusing DoS with DDoS.</p>
+      <h3>What the model looks at</h3>
+      <figure class="cs-chart">
+        <svg class="art" data-art="iot_imp" viewBox="0 0 400 224" role="img" aria-label="LightGBM feature importance by split count, led by header_size and overall_rate" preserveAspectRatio="xMidYMid meet"><text x="110" y="26" text-anchor="end" class="lbl">header_size</text><rect x="118" y="14" width="220" height="16" rx="3" class="acc-f" opacity="1"/><text x="344" y="26" class="lbl">5,706</text><text x="110" y="50" text-anchor="end" class="lbl">overall_rate</text><rect x="118" y="38" width="218" height="16" rx="3" class="acc-f" opacity="0.9"/><text x="342" y="50" class="lbl">5,655</text><text x="110" y="74" text-anchor="end" class="lbl">flow_time</text><rect x="118" y="62" width="150.4" height="16" rx="3" class="acc-f" opacity="0.8"/><text x="274.4" y="74" class="lbl">3,900</text><text x="110" y="98" text-anchor="end" class="lbl">max_value</text><rect x="118" y="86" width="75.9" height="16" rx="3" class="acc-f" opacity="0.7"/><text x="199.9" y="98" class="lbl">1,968</text><text x="110" y="122" text-anchor="end" class="lbl">protocol_tcp</text><rect x="118" y="110" width="74" height="16" rx="3" class="acc-f" opacity="0.6"/><text x="198" y="122" class="lbl">1,919</text><text x="110" y="146" text-anchor="end" class="lbl">rst_packets</text><rect x="118" y="134" width="73.8" height="16" rx="3" class="acc-f" opacity="0.6"/><text x="197.8" y="146" class="lbl">1,913</text><text x="110" y="170" text-anchor="end" class="lbl">value_covariance</text><rect x="118" y="158" width="62.5" height="16" rx="3" class="acc-f" opacity="0.5"/><text x="186.5" y="170" class="lbl">1,620</text><text x="110" y="194" text-anchor="end" class="lbl">src_rate</text><rect x="118" y="182" width="27.5" height="16" rx="3" class="acc-f" opacity="0.4"/><text x="151.5" y="194" class="lbl">714</text><text x="118" y="216" class="lbl">LightGBM (DART) split count</text></svg>
+        <figcaption class="figcap"><b>fig. 07</b>LightGBM feature importance (split count), redrawn from the notebook's output.</figcaption>
+      </figure>
+      <div class="cs-foot">
+        <a class="btn btn-primary btn-sm" href="https://github.com/abdelrahmanelsayed20/multi-class-classification" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg> View the code</a>
+      </div>
+    </div>
+  </dialog>
+
+
+  <!-- =================================================== COMMAND PALETTE -->
+  <dialog class="palette" id="palette" aria-label="Command palette">
+    <div class="palette-input-row">
+      <svg aria-hidden="true"><use href="#i-search"/></svg>
+      <input id="palette-input" type="text" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list" placeholder="Jump to a section, open a case study, copy my email…" autocomplete="off" spellcheck="false">
+      <span class="kbd">esc</span>
+    </div>
+    <div class="palette-list" id="palette-list" role="listbox" aria-label="Commands"></div>
+    <div class="palette-foot" aria-hidden="true">
+      <span><span class="kbd">↑</span><span class="kbd">↓</span> navigate</span>
+      <span><span class="kbd">↵</span> select</span>
+      <span><span class="kbd">esc</span> close</span>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <svg aria-hidden="true"><use href="#i-check"/></svg><span class="toast-msg"></span>
+  </div>
+
+  <script src="assets/js/lab.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
