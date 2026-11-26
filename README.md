@@ -39,7 +39,8 @@ assets/js/projects.js          projects: carousel, filters, BM25 search
 assets/js/kmeans.js, piano.js  skills: k-means playground, synth
 assets/img/                    name GIFs, separators, icons, social preview
 assets/Abdelrahman-Elsayed-CV.pdf
-_archive/                      the previous single-page version (not published: Jekyll skips "_" folders)
+_archive/                      the previous single-page version (kept in the repo, not published)
+.github/workflows/deploy.yml   publishes the site to GitHub Pages on every push to main
 ```
 
 ## Updating
@@ -57,6 +58,10 @@ Pages use root-relative paths (`/assets/...`), so serve the folder instead of op
 python -m http.server 8000
 # then open http://localhost:8000
 ```
+
+## Deploy
+
+Every push to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml). There is no build step: the workflow copies everything except this README, dotfiles and `_` folders into `_site/` and publishes it with GitHub Pages. In the repo's **Settings → Pages**, the source must be **GitHub Actions**. To redeploy without a new commit, open the **Actions** tab, choose **Deploy to GitHub Pages** and click **Run workflow**.
 
 ## Credits
 

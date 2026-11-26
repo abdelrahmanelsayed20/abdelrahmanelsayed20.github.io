@@ -1,0 +1,51 @@
+# Publishes the site to GitHub Pages on every push to main.
+#
+# There is no build step: the pages are plain HTML, CSS and JavaScript, so the
+# job copies the publishable files into _site/ and hands that folder to Pages.
+# Left out: README.md (repo docs only), dotfiles, and anything whose name
+# starts with "_" (such as _archive/, the previous version of the site).
+#
+# Needs Settings -> Pages -> Build and deployment -> Source: "GitHub Actions".
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deployment at a time, and one already running is never cancelled.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Collect the site files into _site/
+        run: |
+          rsync -a --exclude='.*' --exclude='_*' --exclude='/README.md' ./ _site/
+          echo "Publishing $(find _site -type f | wc -l) files"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload the site
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v5
